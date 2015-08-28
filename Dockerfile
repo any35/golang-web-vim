@@ -47,45 +47,45 @@ ENV HOME /home/dev
 # install vim plugins
 RUN mkdir -p ~/.vim/bundle                                              && \
     cd  ~/.vim/bundle                                                   && \
-    git clone --depth 1 https://github.com/Raimondi/delimitMate.git            && \
+#    git clone --depth 1 https://github.com/Raimondi/delimitMate.git            && \
     git clone --depth 1 https://github.com/Shougo/neocomplete.vim.git          && \
-    git clone --depth 1 https://github.com/airblade/vim-gitgutter.git          && \
-    git clone --depth 1 https://github.com/altercation/vim-colors-solarized.git && \
+#    git clone --depth 1 https://github.com/airblade/vim-gitgutter.git          && \
+#    git clone --depth 1 https://github.com/altercation/vim-colors-solarized.git && \
     git clone --depth 1 https://github.com/bling/vim-airline.git               && \
-    git clone --depth 1 https://github.com/derekwyatt/vim-scala.git            && \
+#    git clone --depth 1 https://github.com/derekwyatt/vim-scala.git            && \
     git clone --depth 1 https://github.com/easymotion/vim-easymotion.git       && \
-    git clone --depth 1 https://github.com/elzr/vim-json.git                   && \
+#    git clone --depth 1 https://github.com/elzr/vim-json.git                   && \
     git clone --depth 1 https://github.com/fatih/vim-go.git                    && \
-    git clone --depth 1 https://github.com/garbas/vim-snipmate.git             && \
+#    git clone --depth 1 https://github.com/garbas/vim-snipmate.git             && \
     git clone --depth 1 https://github.com/gmarik/Vundle.vim.git               && \
-    git clone --depth 1 https://github.com/godlygeek/tabular.git               && \
-    git clone --depth 1 https://github.com/groenewege/vim-less.git             && \
-    git clone --depth 1 https://github.com/honza/vim-snippets.git              && \
+#    git clone --depth 1 https://github.com/godlygeek/tabular.git               && \
+#    git clone --depth 1 https://github.com/groenewege/vim-less.git             && \
+#    git clone --depth 1 https://github.com/honza/vim-snippets.git              && \
     git clone --depth 1 https://github.com/jistr/vim-nerdtree-tabs.git         && \
-    git clone --depth 1 https://github.com/jlanzarotta/bufexplorer.git         && \
-    git clone --depth 1 https://github.com/kien/ctrlp.vim.git                  && \
+#    git clone --depth 1 https://github.com/jlanzarotta/bufexplorer.git         && \
+#    git clone --depth 1 https://github.com/kien/ctrlp.vim.git                  && \
     git clone --depth 1 https://github.com/majutsushi/tagbar.git               && \
-    git clone --depth 1 https://github.com/marcweber/vim-addon-mw-utils.git    && \
+#    git clone --depth 1 https://github.com/marcweber/vim-addon-mw-utils.git    && \
     git clone --depth 1 https://github.com/mbbill/undotree.git                 && \
-    git clone --depth 1 https://github.com/michaeljsmith/vim-indent-object.git && \
-    git clone --depth 1 https://github.com/nathanaelkane/vim-indent-guides.git && \
-    git clone --depth 1 https://github.com/othree/html5.vim.git                && \
-    git clone --depth 1 https://github.com/pangloss/vim-javascript.git         && \
-    git clone --depth 1 https://github.com/plasticboy/vim-markdown.git         && \
+#    git clone --depth 1 https://github.com/michaeljsmith/vim-indent-object.git && \
+#    git clone --depth 1 https://github.com/nathanaelkane/vim-indent-guides.git && \
+#    git clone --depth 1 https://github.com/othree/html5.vim.git                && \
+#    git clone --depth 1 https://github.com/pangloss/vim-javascript.git         && \
+#    git clone --depth 1 https://github.com/plasticboy/vim-markdown.git         && \
     git clone --depth 1 https://github.com/scrooloose/nerdcommenter.git        && \
     git clone --depth 1 https://github.com/scrooloose/nerdtree.git             && \
-    git clone --depth 1 https://github.com/scrooloose/syntastic.git            && \
-    git clone --depth 1 https://github.com/terryma/vim-expand-region.git       && \
-    git clone --depth 1 https://github.com/terryma/vim-multiple-cursors.git    && \
-    git clone --depth 1 https://github.com/tomtom/tlib_vim.git                 && \
+#    git clone --depth 1 https://github.com/scrooloose/syntastic.git            && \
+#    git clone --depth 1 https://github.com/terryma/vim-expand-region.git       && \
+#    git clone --depth 1 https://github.com/terryma/vim-multiple-cursors.git    && \
+#    git clone --depth 1 https://github.com/tomtom/tlib_vim.git                 && \
     git clone --depth 1 https://github.com/tpope/vim-fugitive.git              && \
-    git clone --depth 1 https://github.com/tpope/vim-haml.git                  && \
-    git clone --depth 1 https://github.com/tpope/vim-repeat.git                && \
-    git clone --depth 1 https://github.com/tpope/vim-surround.git              && \
-    git clone --depth 1 https://github.com/vim-scripts/EasyGrep.git            && \
-    git clone --depth 1 https://github.com/vim-scripts/YankRing.vim.git        && \
-    git clone --depth 1 https://github.com/vim-scripts/mru.vim.git             && \
-    git clone --depth 1 https://github.com/vim-scripts/taglist.vim.git         && \
+#    git clone --depth 1 https://github.com/tpope/vim-haml.git                  && \
+#    git clone --depth 1 https://github.com/tpope/vim-repeat.git                && \
+#    git clone --depth 1 https://github.com/tpope/vim-surround.git              && \
+#    git clone --depth 1 https://github.com/vim-scripts/EasyGrep.git            && \
+#    git clone --depth 1 https://github.com/vim-scripts/YankRing.vim.git        && \
+#    git clone --depth 1 https://github.com/vim-scripts/mru.vim.git             && \
+#    git clone --depth 1 https://github.com/vim-scripts/taglist.vim.git         && \
     vim +PluginInstall +qall                                                   && \
 # cleanup
     rm -rf Vundle.vim/.git vim-go/.git tagbar/.git neocomplete.vim/.git          \

@@ -87,18 +87,18 @@ RUN mkdir -p ~/.vim/bundle                                              && \
     git clone --depth 1 https://github.com/vim-scripts/YankRing.vim.git        && \
     git clone --depth 1 https://github.com/vim-scripts/mru.vim.git             && \
     git clone --depth 1 https://github.com/vim-scripts/taglist.vim.git         && \
-    vim +PluginInstall +qall                                            && \
+    vim +PluginInstall +qall                                                   && \
 # cleanup
-    rm -rf Vundle.vim/.git vim-go/.git tagbar/.git neocomplete.vim/.git    \
-        nerdtree/.git vim-airline/.git vim-fugitive/.git                   \
-        vim-nerdtree-tabs/.git undotree/.git vim-easymotion/.git           \
-        nerdcommenter/.git vim-javascript.git tabular.git delimitMate.git  \
-        vim-indent-guides.git vim-less.git html5.vim.git vim-json.git       \
-        vim-easymotion.git EasyGrep.git bufexplorer.git ctrlp.vim.git       \
-        syntastic.git tlib_vim.git vim-addon-mw-utils.git                   \
-        vim-colors-solarized.git taglist.vim.git vim-expand-region.git      \
-        vim-gitgutter.git vim-markdown.git vim-indent-object.git            \
-        vim-multiple-cursors.git vim-repeat.git vim-surround.git mru.vim.git \
-        YankRing.vim.git vim-haml.git vim-snipmate.git vim-snippets.git     \
-        vim-scala.git
+    rm -rf Vundle.vim/.git vim-go/.git tagbar/.git neocomplete.vim/.git          \
+        nerdtree/.git vim-airline/.git vim-fugitive/.git                         \
+        vim-nerdtree-tabs/.git undotree/.git vim-easymotion/.git                 \
+        nerdcommenter/.git vim-javascript/.git tabular/.git delimitMate/.git     \
+        vim-indent-guides/.git vim-less/.git html5.vim/.git vim-json/.git        \
+        vim-easymotion/.git EasyGrep/.git bufexplorer/.git ctrlp.vim/.git        \
+        syntastic/.git tlib_vim/.git vim-addon-mw-utils/.git                     \
+        vim-colors-solarized/.git taglist.vim/.git vim-expand-region/.git        \
+        vim-gitgutter/.git vim-markdown/.git vim-indent-object/.git              \
+        vim-multiple-cursors/.git vim-repeat/.git vim-surround/.git mru.vim/.git \
+        YankRing.vim/.git vim-haml/.git vim-snipmate/.git vim-snippets/.git      \
+        vim-scala/.git
 

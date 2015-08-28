@@ -47,7 +47,6 @@ ENV HOME /home/dev
 # install vim plugins
 RUN mkdir -p ~/.vim/bundle                                              && \
     cd  ~/.vim/bundle                                                   && \
-    git clone --depth 1 https://github.com/Lokaltog/vim-easymotion.git         && \
     git clone --depth 1 https://github.com/Raimondi/delimitMate.git            && \
     git clone --depth 1 https://github.com/Shougo/neocomplete.vim.git          && \
     git clone --depth 1 https://github.com/airblade/vim-gitgutter.git          && \
@@ -94,7 +93,7 @@ RUN mkdir -p ~/.vim/bundle                                              && \
         vim-nerdtree-tabs/.git undotree/.git vim-easymotion/.git                 \
         nerdcommenter/.git vim-javascript/.git tabular/.git delimitMate/.git     \
         vim-indent-guides/.git vim-less/.git html5.vim/.git vim-json/.git        \
-        vim-easymotion/.git EasyGrep/.git bufexplorer/.git ctrlp.vim/.git        \
+        EasyGrep/.git bufexplorer/.git ctrlp.vim/.git                            \
         syntastic/.git tlib_vim/.git vim-addon-mw-utils/.git                     \
         vim-colors-solarized/.git taglist.vim/.git vim-expand-region/.git        \
         vim-gitgutter/.git vim-markdown/.git vim-indent-object/.git              \

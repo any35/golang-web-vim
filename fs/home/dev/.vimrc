@@ -9,16 +9,45 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " custom plugins
-Plugin 'fatih/vim-go'
-Plugin 'majutsushi/tagbar'
-Plugin 'shougo/neocomplete.vim'
-Plugin 'scrooloose/nerdtree'
+
+Plugin 'Raimondi/delimitMate'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
-Plugin 'tpope/vim-fugitive'
+"Plugin 'derekwyatt/vim-scala'
+Plugin 'easymotion/vim-easymotion'
+"Plugin 'elzr/vim-json'
+Plugin 'fatih/vim-go'
+"Plugin 'garbas/vim-snipmate'
+"Plugin 'godlygeek/tabular'
+"Plugin 'groenewege/vim-less'
+"Plugin 'honza/vim-snippets'
 Plugin 'jistr/vim-nerdtree-tabs'
+"Plugin 'jlanzarotta/bufexplorer'
+"Plugin 'kien/ctrlp.vim'
+Plugin 'majutsushi/tagbar'
+"Plugin 'marcweber/vim-addon-mw-utils'
 Plugin 'mbbill/undotree'
-Plugin 'Lokaltog/vim-easymotion'
+"Plugin 'michaeljsmith/vim-indent-object'
+"Plugin 'nathanaelkane/vim-indent-guides'
+"Plugin 'othree/html5.vim'
+"Plugin 'pangloss/vim-javascript'
+"Plugin 'plasticboy/vim-markdown'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/syntastic'
+"Plugin 'terryma/vim-expand-region'
+"Plugin 'terryma/vim-multiple-cursors'
+"Plugin 'tomtom/tlib_vim'
+Plugin 'tpope/vim-fugitive'
+"Plugin 'tpope/vim-haml'
+"Plugin 'tpope/vim-repeat'
+"Plugin 'tpope/vim-surround'
+"Plugin 'vim-scripts/EasyGrep'
+"Plugin 'vim-scripts/YankRing.vim'
+"Plugin 'vim-scripts/mru.vim'
+"Plugin 'vim-scripts/taglist.vim'
 
 " all of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -34,9 +63,8 @@ set scrolloff=999
 set encoding=utf-8
 colorscheme molokai
 
+
 " plugin customizations
-" neocomplete
-let g:neocomplete#enable_at_startup = 1
 
 " vim go
 " disable open browser after posting snippet
@@ -113,4 +141,16 @@ au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 " rename the identifier under the cursor to a new name
 au FileType go nmap <Leader>e <Plug>(go-rename)
+
+"==================================================================
+" Plugin settings
+" =================================================================
+
+"-----------------delimitMate-------------------------------------
+
+"-----------------neocomplete------------------------------------
+" neocomplete
+let g:neocomplete#enable_at_startup = 1
+
+
 

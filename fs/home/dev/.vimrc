@@ -61,6 +61,7 @@ set number
 set cursorline
 set scrolloff=999
 set encoding=utf-8
+set fileencodings=ucs-bom,utf-8,cp936
 colorscheme molokai
 
 

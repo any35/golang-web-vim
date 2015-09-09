@@ -134,6 +134,13 @@ in go, type `fun<tab>` could be expanded to
 for more snippets in golang pls see [go.snippets](https://github.com/honza/vim-snippets/blob/master/snippets/go.snippets)
 and [more snippets](https://github.com/honza/vim-snippets/tree/master/snippets)
 
+### fencview
+this plugin auto detect CJK and Unicode file encodings. 
+``` :FencAutoDectect ```
+or
+``` :FencView ```
+and you can select the right encodings.
+
 
 ## Limitations
 

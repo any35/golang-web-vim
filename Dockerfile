@@ -16,7 +16,6 @@ RUN apt-get update                                                      && \
 # build and install vim
     git clone --depth 1  https://github.com/vim/vim.git                 && \
     cd vim/src                                                          && \
-    make distclean                                                      && \
     ./configure --with-features=huge --enable-luainterp                    \
         --enable-gui=no --without-x --prefix=/usr                       && \
     make VIMRUNTIMEDIR=/usr/share/vim/vim74                             && \

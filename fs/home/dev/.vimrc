@@ -15,19 +15,19 @@ Plugin 'Shougo/neocomplete.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
-"Plugin 'derekwyatt/vim-scala'
+Plugin 'derekwyatt/vim-scala'
 Plugin 'easymotion/vim-easymotion'
-"Plugin 'elzr/vim-json'
+Plugin 'elzr/vim-json'
 Plugin 'fatih/vim-go'
-"Plugin 'garbas/vim-snipmate'
+Plugin 'garbas/vim-snipmate'
 "Plugin 'godlygeek/tabular'
 "Plugin 'groenewege/vim-less'
-"Plugin 'honza/vim-snippets'
+Plugin 'honza/vim-snippets'
 Plugin 'jistr/vim-nerdtree-tabs'
 "Plugin 'jlanzarotta/bufexplorer'
 "Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
-"Plugin 'marcweber/vim-addon-mw-utils'
+Plugin 'marcweber/vim-addon-mw-utils'
 Plugin 'mbbill/undotree'
 "Plugin 'michaeljsmith/vim-indent-object'
 "Plugin 'nathanaelkane/vim-indent-guides'
@@ -39,7 +39,7 @@ Plugin 'scrooloose/nerdtree'
 "Plugin 'scrooloose/syntastic'
 "Plugin 'terryma/vim-expand-region'
 "Plugin 'terryma/vim-multiple-cursors'
-"Plugin 'tomtom/tlib_vim'
+Plugin 'tomtom/tlib_vim'
 Plugin 'tpope/vim-fugitive'
 "Plugin 'tpope/vim-haml'
 "Plugin 'tpope/vim-repeat'
@@ -75,6 +75,8 @@ let g:go_fmt_command = "goimports"
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
 
 " vim-airline
 set laststatus=2
@@ -151,6 +153,28 @@ au FileType go nmap <Leader>e <Plug>(go-rename)
 "-----------------neocomplete------------------------------------
 " neocomplete
 let g:neocomplete#enable_at_startup = 1
+
+
+"----------------easymotion---------------------------------------
+map <Leader> <Plug>(easymotion-prefix)
+nmap <Leader>s <Plug>(easymotion-s2)
+nmap <Leader>t <Plug>(easymotion-t2)
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+" These `n` & `N` mappings are options. You do not have to map `n` & `N` to
+" EasyMotion.
+" " Without these mappings, `n` & `N` works fine. (These mappings just provide
+" " different highlight method and have some other features )
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>h <Plug>(easymotion-linebackward)
+
+let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
 
 
 

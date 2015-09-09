@@ -14,8 +14,9 @@ RUN apt-get update                                                      && \
     ln -s /usr/lib/x86_64-linux-gnu/liblua5.2.so /usr/lib/liblua.so     && \
     cd /tmp                                                             && \
 # build and install vim
-    hg clone https://code.google.com/p/vim/                             && \
-    cd vim                                                              && \
+    git clone --depth 1  https://github.com/vim/vim.git                 && \
+    cd vim/src                                                          && \
+    make distclean                                                      && \
     ./configure --with-features=huge --enable-luainterp                    \
         --enable-gui=no --without-x --prefix=/usr                       && \
     make VIMRUNTIMEDIR=/usr/share/vim/vim74                             && \
@@ -30,7 +31,8 @@ RUN apt-get update                                                      && \
     go get github.com/golang/lint/golint                                && \
     go get github.com/kisielk/errcheck                                  && \
     go get github.com/jstemmer/gotags                                   && \
-    mv /go/bin/* /usr/src/go/bin                                        && \
+    mkdir -p /usr/src/go/bin/                                           && \
+    mv /go/bin/* /usr/src/go/bin/                                       && \
 # add dev user
     adduser dev --disabled-password --gecos ""                          && \
     echo "ALL            ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers     && \

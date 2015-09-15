@@ -36,7 +36,7 @@ for more information pls visit [use 256 colors in screen](https://wiki.archlinux
 * [indent-guides](https://github.com/nathanaelkane/vim-indent-guides) Indent Guides is a plugin for visually displaying indent levels in Vim.
 * [html5](https://github.com/othree/html5.vim) HTML5 omnicomplete and syntax 
 * [javascript](https://github.com/pangloss/vim-javascript) JavaScript bundle for vim, this bundle provides syntax and indent plugins.
-* [markdown](https://github.com/plasticboy/vim-markdown) 
+* [markdown](https://github.com/plasticboy/vim-markdown) Markdown Vim Mode 
 * [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
 * [nerdtree](https://github.com/scrooloose/nerdtree)
 * [syntastic](https://github.com/scrooloose/syntastic)

@@ -32,7 +32,7 @@ Plugin 'mbbill/undotree'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'othree/html5.vim'
-"Plugin 'pangloss/vim-javascript'
+Plugin 'pangloss/vim-javascript'
 "Plugin 'plasticboy/vim-markdown'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
@@ -189,5 +189,10 @@ nmap <F4> :BufExplorer<CR>
 nmap <F6> :CtrlP<CR>
 
 "----------------BtrlP-----------------------------------------
+
+
+"----------------javascript.vim-----------------------------------------
+au BufRead,BufNewFile *.js  set filetype=javascript syntax=jquery
+
 
 

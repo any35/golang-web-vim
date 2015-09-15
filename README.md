@@ -34,11 +34,9 @@ for more information pls visit [use 256 colors in screen](https://wiki.archlinux
 * [undotree](https://github.com/mbbill/undotree) The ultimate undo history visualizer for VIM
 * [indent-object](https://github.com/michaeljsmith/vim-indent-object) This plugin defines a new text object, based on indentation levels.
 * [indent-guides](https://github.com/nathanaelkane/vim-indent-guides) Indent Guides is a plugin for visually displaying indent levels in Vim.
-
-
 * [html5](https://github.com/othree/html5.vim) HTML5 omnicomplete and syntax 
-* [javascript](https://github.com/pangloss/vim-javascript)
-* [markdown](https://github.com/plasticboy/vim-markdown)
+* [javascript](https://github.com/pangloss/vim-javascript) JavaScript bundle for vim, this bundle provides syntax and indent plugins.
+* [markdown](https://github.com/plasticboy/vim-markdown) 
 * [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
 * [nerdtree](https://github.com/scrooloose/nerdtree)
 * [syntastic](https://github.com/scrooloose/syntastic)
@@ -363,6 +361,9 @@ eeeeeeeeeeeee
 ### indent guides
 `<leader>ig` to switch indent guides display
 
+### javascript.vim
+`=G` auto indent
+  NOTE: jquery syntax is not worked yet!
 
 
 ## Limitations

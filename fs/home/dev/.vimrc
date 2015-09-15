@@ -20,8 +20,8 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'elzr/vim-json'
 Plugin 'fatih/vim-go'
 Plugin 'garbas/vim-snipmate'
-"Plugin 'godlygeek/tabular'
-"Plugin 'groenewege/vim-less'
+Plugin 'godlygeek/tabular'
+Plugin 'groenewege/vim-less'
 Plugin 'honza/vim-snippets'
 Plugin 'jistr/vim-nerdtree-tabs'
 "Plugin 'jlanzarotta/bufexplorer'
@@ -178,4 +178,7 @@ let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 let g:EasyMotion_smartcase = 1
 
 
+"----------------less-----------------------------------------
+nnoremap <Leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
+au BufNewFile,BufRead *.less set filetype=less
 

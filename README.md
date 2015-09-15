@@ -23,7 +23,7 @@ for more information pls visit [use 256 colors in screen](https://wiki.archlinux
 * [go](https://github.com/fatih/vim-go) Go development plugin for Vim
 * [snipmate](https://github.com/garbas/vim-snipmate) provide support for textual snippets, similar to TextMate or other Vim plugins like UltiSnips.
 * [Vundle](https://github.com/gmarik/Vundle.vim) plugin manager for vim.
-* [tabular](https://github.com/godlygeek/tabular)
+* [tabular](https://github.com/godlygeek/tabular) Aligning text
 * [less](https://github.com/groenewege/vim-less)
 * [snippets](https://github.com/honza/vim-snippets) snipMate & UltiSnip Snippets
 * [nerdtree-tabs](https://github.com/jistr/vim-nerdtree-tabs)
@@ -136,10 +136,91 @@ and [more snippets](https://github.com/honza/vim-snippets/tree/master/snippets)
 
 ### fencview
 this plugin auto detect CJK and Unicode file encodings. 
-``` :FencAutoDectect ```
-or
-``` :FencView ```
+` :FencAutoDectect ` or ` :FencView `
 and you can select the right encodings.
+
+### tabular
+#### Aligning assignments
+Before:
+```
+one = 1
+two = 2
+three = 3
+four = 4
+```
+Running `:Tab /=` produces
+```
+one   = 1
+two   = 2
+three = 3
+four  = 4
+```
+#### Colon assignments
+There are a couple of different ways that colon assignments could be aligned. If we start with an example that is not aligned:
+```
+var video = {
+    metadata: {
+        title: "Aligning assignments"
+        h264Src: "/media/alignment.mov",
+        oggSrc: "/media/alignment.ogv"
+        posterSrc: "/media/alignment.png"
+        duration: 320,
+    }
+}
+````
+Select the inner block by positioning your cursor inside it and running `vi}` (enable Visual mode, and select inner Brace). Then you could run `:Tab/:` which would produce this result:var 
+```
+video = {
+    metadata: {
+        title     : "Aligning assignments"
+        h264Src   : "/media/alignment.mov",
+        oggSrc    : "/media/alignment.ogv"
+        posterSrc : "/media/alignment.png"
+        duration  : 320,
+    }
+}
+```
+If you don’t like stacking the colons in a column, you could use the `\zs` atom to exclude the `:` character from the search match. Running `:Tab /:\zs` produces this result:
+```
+var video = {
+    metadata: {
+        title:      "Aligning assignments"
+        h264Src:    "/media/alignment.mov",
+        oggSrc:     "/media/alignment.ogv"
+        posterSrc:  "/media/alignment.png"
+        duration:   320,
+    }
+}
+```
+Be aware that if you work in a team, there may be a house style that you should follow.
+
+#### Table markup
+Here is a scenario outline for cucumber steps, including a pipe-delimited table of examples:
+```
+Scenario Outline: eating
+  Given there are &lt;start&gt; cucumbers
+  When I eat &lt;eat&gt; cucumbers
+  Then I should have &lt;left&gt; cucumbers
+
+  Examples:
+    |start|eat|left|
+    |12|5|7|
+    |20|5|15|
+```
+With the cursor positioned anywhere in the table, running `:Tab/|` produces:
+```
+Scenario Outline: eating
+  Given there are &lt;start&gt; cucumbers
+  When I eat &lt;eat&gt; cucumbers
+  Then I should have &lt;left&gt; cucumbers
+
+  Examples:
+    | start | eat | left |
+    | 12    | 5   | 7    |
+    | 20    | 5   | 15   |
+```
+see [tabular](http://vimcasts.org/episodes/aligning-text-with-tabular-vim/) for more information.
+See [doc/Tabular.txt](http://raw.github.com/godlygeek/tabular/master/doc/Tabular.txt) for detailed documentation.
 
 
 ## Limitations

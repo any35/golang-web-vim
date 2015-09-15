@@ -435,7 +435,7 @@ Press `+` to expand the visual selection and `_` to shrink it.
 ![Vim completion with animation](https://raw.github.com/terryma/vim-expand-region/master/expand-region.gif)
 
 ### vim-multiple-cursors
-** It's great for quick refactoring **
+**It's great for quick refactoring**
 ![Example1](https://github.com/terryma/vim-multiple-cursors/raw/master/assets/example1.gif?raw=true)
 * jump to `p` with `fp`
 * select the word under cursor with `<C-n>`
@@ -444,7 +444,7 @@ Press `+` to expand the visual selection and `_` to shrink it.
 * type the replacement
 * press `<Esc>` to quit back to regular Vim
 
-** Add a cursor to each line of your visual selection **
+**Add a cursor to each line of your visual selection**
 ![Example2](https://github.com/terryma/vim-multiple-cursors/raw/master/assets/example2.gif?raw=true)
 * select the line with `V`
 * go to the end of the file with `G`
@@ -455,7 +455,7 @@ Press `+` to expand the visual selection and `_` to shrink it.
 * hit `<BS>`, now all the words are on the same line
 * the rest is just normal Vim
 
-** Do it backwards too! This is not just a replay of the above gif :) **
+**Do it backwards too! This is not just a replay of the above gif :)**
 ![Example3](https://github.com/terryma/vim-multiple-cursors/raw/master/assets/example3.gif?raw=true)
 * press `dt"` to delete everything until the first quote
 * press `$` to go to end of line
@@ -467,7 +467,7 @@ Press `+` to expand the visual selection and `_` to shrink it.
 * delete the left quote with `C-g<BS>` (custom mapping to move cursor in insert mode)
 * go to end of line and delete right quote with `C-e<BS>`
 
-** Add multiple cursors using regexes **
+**Add multiple cursors using regexes**
 ![Example4](https://github.com/terryma/vim-multiple-cursors/raw/master/assets/example4.gif?raw=true)
 * press `jV` to visually select the second line
 * press `Gk` to select all but the last line
@@ -488,7 +488,7 @@ Two additional keys are also mapped:
 
 You can also add multiple cursors using a regular expression. The command `MultipleCursorsFind` accepts a range and a pattern, and it will create a virtual cursor at the end of every match within the range. If no range is passed in, then it defaults to the entire buffer.
 
-** NOTE: ** If at any time you have lingering cursors on screen, you can press `Ctrl-n` in Normal mode and it will remove all prior cursors before starting a new one.
+**NOTE:** If at any time you have lingering cursors on screen, you can press `Ctrl-n` in Normal mode and it will remove all prior cursors before starting a new one.
 
 
 ## Limitations

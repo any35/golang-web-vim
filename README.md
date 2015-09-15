@@ -38,7 +38,7 @@ for more information pls visit [use 256 colors in screen](https://wiki.archlinux
 * [javascript](https://github.com/pangloss/vim-javascript) JavaScript bundle for vim, this bundle provides syntax and indent plugins.
 * [markdown](https://github.com/plasticboy/vim-markdown) Markdown Vim Mode 
 * [nerdcommenter](https://github.com/scrooloose/nerdcommenter) Vim plugin for intensely orgasmic commenting
-* [nerdtree](https://github.com/scrooloose/nerdtree)
+* [nerdtree](https://github.com/scrooloose/nerdtree) A tree explorer plugin for vim.
 * [syntastic](https://github.com/scrooloose/syntastic)
 * [expand-region](https://github.com/terryma/vim-expand-region)
 * [multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
@@ -426,6 +426,11 @@ left side (\<leader\>cl) or both sides (\<leader\>cb).
 
 **`[count]\<leader\>cu` |NERDComUncommentLine|**  
 Uncomments the selected line(s). 
+
+### NERD tree
+`F7` NERDTreeTabsToggle
+
+
 
 ## Limitations
 

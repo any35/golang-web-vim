@@ -32,9 +32,11 @@ for more information pls visit [use 256 colors in screen](https://wiki.archlinux
 * [tagbar](https://github.com/majutsushi/tagbar) Vim plugin that displays tags in a window, ordered by scope http://majutsushi.github.com/tagbar/
 * [addon-mw-utils](https://github.com/marcweber/vim-addon-mw-utils) interpret a file by function and cache file automatically(required by snipmate)
 * [undotree](https://github.com/mbbill/undotree) The ultimate undo history visualizer for VIM
-* [indent-object](https://github.com/michaeljsmith/vim-indent-object)
-* [indent-guides](https://github.com/nathanaelkane/vim-indent-guides)
-* [html5](https://github.com/othree/html5.vim)
+* [indent-object](https://github.com/michaeljsmith/vim-indent-object) This plugin defines a new text object, based on indentation levels.
+* [indent-guides](https://github.com/nathanaelkane/vim-indent-guides) Indent Guides is a plugin for visually displaying indent levels in Vim.
+
+
+* [html5](https://github.com/othree/html5.vim) HTML5 omnicomplete and syntax 
 * [javascript](https://github.com/pangloss/vim-javascript)
 * [markdown](https://github.com/plasticboy/vim-markdown)
 * [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
@@ -263,6 +265,104 @@ Use `:diffthis` when opening multiple files to run `:diffthis` on the first 4 fi
 
 ### UndoTree
 `F5` UndotreeToggle
+
+### indent object
+This plugin defines two new text objects. These are very similar - they differ
+only in whether they include the line below the block or not.
+
+        Key Mapping       Description     ~
+===
+        `<count>ai`         (A)n (I)ndentation level and line above.
+        `<count>ii`         (I)nner (I)ndentation level (no line above).
+        `<count>aI`         (A)n (I)ndentation level and lines above/below.
+        `<count>iI`         (I)nner (I)ndentation level (no lines above/below).
+
+
+Note that the iI mapping is mostly included simply for completeness, it is
+effectively a synonym for ii.
+
+Just like regular text objects, these mappings can be used either with
+operators expecting a motion, such as 'd' or 'c', as well as in visual mode.
+In visual mode the mapping can be repeated, which has the effect of
+iteratively increasing the scope of indentation block selected. Specifying a
+count can be used to achieve the same effect.
+
+The difference between |ai| and |aI| is that |ai| includes the line
+immediately above the indentation block, whereas aI includes not only that,
+but also the line below. Which of these is most useful largely depends on the
+structure of the language being edited.
+
+For example, when editing the Python code, |ai| is generally more useful, as
+the line above the indentation block is usually related to it. For example, in
+the following code ( * is used to indicate the cursor position):
+```
+      if foo > 3:
+         log("foo is big") *
+         foo = 3
+      do_something_else()
+```
+the if clause is logically related to the code block, whereas the function
+call below is not. It is unlikely we would want to select the line below when
+we are interested in the if block.
+
+However, in other languages, such as Vim scripts, control structures are
+usually terminated with something like 'endif'. Therefore, in this example:
+```
+      if foo > 3
+         echo "foo is big" *
+         let foo = 3
+      endif
+      call do_something_else()
+```
+we would more likely want to include the endif when we select the if
+structure.
+for example( * is used to indicate the cursor position)
+```
+aaaaaaaaaaaaa
+    bbbbbbbbb*
+    ccccccccc
+        ddddddddd
+eeeeeeeeeeeee
+```
+in normal model, when we execute 
+* `>ai` it become
+```
+	aaaaaaaaaaaaa                                                                                                                        
+		bbbbbbbbb*
+		ccccccccc
+			ddddddddd
+eeeeeeeeeeeee
+```
+* `>ii` it cecome
+````
+aaaaaaaaaaaaa                                                                                                                        
+		bbbbbbbbb*
+		ccccccccc
+			ddddddddd
+eeeeeeeeeeeee
+````
+* `>aI` it cecome
+````
+	aaaaaaaaaaaaa                                                                                                                        
+		bbbbbbbbb*
+		ccccccccc
+			ddddddddd
+	eeeeeeeeeeeee
+````
+* `>iI` it cecome
+````
+aaaaaaaaaaaaa                                                                                                                        
+		bbbbbbbbb*
+		ccccccccc
+			ddddddddd
+eeeeeeeeeeeee
+````
+
+[document is here](https://github.com/michaeljsmith/vim-indent-object/blob/master/doc/indent-object.txt)
+
+### indent guides
+`<leader>ig` to switch indent guides display
+
 
 
 ## Limitations

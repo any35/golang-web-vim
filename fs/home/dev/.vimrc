@@ -29,9 +29,9 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'marcweber/vim-addon-mw-utils'
 Plugin 'mbbill/undotree'
-"Plugin 'michaeljsmith/vim-indent-object'
-"Plugin 'nathanaelkane/vim-indent-guides'
-"Plugin 'othree/html5.vim'
+Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'othree/html5.vim'
 "Plugin 'pangloss/vim-javascript'
 "Plugin 'plasticboy/vim-markdown'
 Plugin 'scrooloose/nerdcommenter'
@@ -188,5 +188,6 @@ nmap <F4> :BufExplorer<CR>
 "----------------BtrlP-----------------------------------------
 nmap <F6> :CtrlP<CR>
 
+"----------------BtrlP-----------------------------------------
 
 

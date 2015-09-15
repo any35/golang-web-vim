@@ -435,31 +435,61 @@ Press `+` to expand the visual selection and `_` to shrink it.
 ![Vim completion with animation](https://raw.github.com/terryma/vim-expand-region/master/expand-region.gif)
 
 ### vim-multiple-cursors
-** It's great for quick refactoring**
-![Example1](assets/example1.gif?raw=true)
-*jump to `p` with `fp`
-*select the word under cursor with `<C-n>`
-*do that two more times for the other two occurrences in the function
-*press `c` to change
-*type the replacement
-*press `<Esc>` to quit back to regular Vim
+**It's great for quick refactoring **
+![Example1](https://github.com/terryma/vim-multiple-cursors/raw/master/assets/example1.gif?raw=true)
+* jump to `p` with `fp`
+* select the word under cursor with `<C-n>`
+* do that two more times for the other two occurrences in the function
+* press `c` to change
+* type the replacement
+* press `<Esc>` to quit back to regular Vim
 
 ** Add a cursor to each line of your visual selection**
-![Example2](assets/example2.gif?raw=true)
-*select the line with `V`
-*go to the end of the file with `G`
-*press `<C-n>` to add a cursor at the beginning of every line and move to normal mode
-*press `I` to insert at the beginning of the line
-*type `",` move to end of line with `<C-e>`, type another `"` followed by `,`
-*move every cursor down one line with `<C-j>`(this is a custom mapping of mine in Insert mode)
-*hit `<BS>`, now all the words are on the same line
-*the rest is just normal Vim
+![Example2](https://github.com/terryma/vim-multiple-cursors/raw/master/assets/example2.gif?raw=true)
+* select the line with `V`
+* go to the end of the file with `G`
+* press `<C-n>` to add a cursor at the beginning of every line and move to normal mode
+* press `I` to insert at the beginning of the line
+* type `",` move to end of line with `<C-e>`, type another `"` followed by `,`
+* move every cursor down one line with `<C-j>`(this is a custom mapping of mine in Insert mode)
+* hit `<BS>`, now all the words are on the same line
+* the rest is just normal Vim
 
 ** Do it backwards too! This is not just a replay of the above gif :)**
-![Example3](assets/example3.gif?raw=true)
+![Example3](https://github.com/terryma/vim-multiple-cursors/raw/master/assets/example3.gif?raw=true)
+* press `dt"` to delete everything until the first quote
+* press `$` to go to end of line
+* pree `r`, to replace the `]` with `,`
+* go back to the beginning of the line with `^`, press `f`, to find the first comma
+* press `v` to select `,` in visual mode, and mash on `<C-n>` until the last occurrence
+* press `c` followed by `<CR>` to break the line into multiple lines
+* move every cursor up one line with `<C-k>` (again my custom mapping)
+* delete the left quote with `C-g<BS>` (custom mapping to move cursor in insert mode)
+* go to end of line and delete right quote with `C-e<BS>`
 
 ** Add multiple cursors using regexes**
-![Example4](assets/example4.gif?raw=true)
+![Example4](https://github.com/terryma/vim-multiple-cursors/raw/master/assets/example4.gif?raw=true)
+* press `jV` to visually select the second line
+* press `Gk` to select all but the last line
+* type `:` followed by the `MultipleCursorsFind` command
+* press `o` to toggle the cursor for each visual selection
+* press `p` to paste the content of the `+` register (I have `clipboard=unnamedplus` in my vimrc) to each virtual cursor
+[see more details](https://github.com/terryma/vim-multiple-cursors/issues/39)
+
+Out of the box, all you need to know is a single key `Ctrl-n`. Pressing the key in Normal mode highlights the current word under the cursor in Visual mode and places a virtual cursor at the end of it. Pressing it again finds the next occurrence and places another virtual cursor at the end of the visual selection. If you select multiple lines in Visual mode, pressing the key puts a virtual cursor at every line and leaves you in Normal mode.
+
+After you've marked all your locations with `Ctrl-n`, you can change the visual selection with normal Vim motion commands in Visual mode. You could go to Normal mode by pressing `v` and wield your motion commands there. Single key command to switch to Insert mode such as `c` or `s` from Visual mode or `i`, `a`, `I`, `A` in Normal mode should work without any issues.
+
+At any time, you can press `<Esc>` to exit back to regular Vim.
+
+Two additional keys are also mapped:
+- `Ctrl-p` in Visual mode will remove the current virtual cursor and go back to the previous virtual cursor location. This is useful if you are trigger happy with `Ctrl-n` and accidentally went too far.
+- `Ctrl-x` in Visual mode will remove the current virtual cursor and skip to the next virtual cursor location. This is useful if you don't want the current selection to be a candidate to operate on later.
+
+You can also add multiple cursors using a regular expression. The command `MultipleCursorsFind` accepts a range and a pattern, and it will create a virtual cursor at the end of every match within the range. If no range is passed in, then it defaults to the entire buffer.
+
+**NOTE:** If at any time you have lingering cursors on screen, you can press `Ctrl-n` in Normal mode and it will remove all prior cursors before starting a new one.
+
 
 ## Limitations
 

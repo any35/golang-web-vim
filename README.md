@@ -37,7 +37,7 @@ for more information pls visit [use 256 colors in screen](https://wiki.archlinux
 * [html5](https://github.com/othree/html5.vim) HTML5 omnicomplete and syntax 
 * [javascript](https://github.com/pangloss/vim-javascript) JavaScript bundle for vim, this bundle provides syntax and indent plugins.
 * [markdown](https://github.com/plasticboy/vim-markdown) Markdown Vim Mode 
-* [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
+* [nerdcommenter](https://github.com/scrooloose/nerdcommenter) Vim plugin for intensely orgasmic commenting
 * [nerdtree](https://github.com/scrooloose/nerdtree)
 * [syntastic](https://github.com/scrooloose/syntastic)
 * [expand-region](https://github.com/terryma/vim-expand-region)
@@ -365,6 +365,67 @@ eeeeeeeeeeeee
 `=G` auto indent
   NOTE: jquery syntax is not worked yet!
 
+### nerdcommenter
+The following key mappings are provided by default (there is also a menu 
+provided that contains menu items corresponding to all the below mappings): 
+
+Most of the following mappings are for normal/visual mode only. The |NERDComInsertComment| mapping is for insert mode only. 
+
+**`[count]\<leader\>cc` |NERDComComment|**  
+Comment out the current line or text selected in visual mode. 
+
+
+**`[count]\<leader\>cn` |NERDComNestedComment|**  
+Same as \<leader\>cc but forces nesting. 
+
+
+**`[count]\<leader\>c<space>` |NERDComToggleComment|**  
+Toggles the comment state of the selected line(s). If the topmost selected 
+line is commented, all selected lines are uncommented and vice versa. 
+
+
+**`[count]\<leader\>cm` |NERDComMinimalComment|**  
+Comments the given lines using only one set of multipart delimiters. 
+
+
+**`[count]\<leader\>ci` |NERDComInvertComment|**  
+Toggles the comment state of the selected line(s) individually. 
+
+
+**`[count]\<leader\>cs` |NERDComSexyComment|**  
+Comments out the selected lines ``sexily'' 
+
+
+**`[count]\<leader\>cy` |NERDComYankComment|**  
+Same as \<leader\>cc except that the commented line(s) are yanked first. 
+
+
+**`\<leader\>c$` |NERDComEOLComment|**  
+Comments the current line from the cursor to the end of line. 
+
+
+**`\<leader\>cA` |NERDComAppendComment|**  
+Adds comment delimiters to the end of line and goes into insert mode between 
+them. 
+
+
+**|NERDComInsertComment|**  
+Adds comment delimiters at the current cursor position and inserts between. 
+Disabled by default. 
+
+
+**`\<leader\>ca` |NERDComAltDelim|**  
+Switches to the alternative set of delimiters. 
+
+
+**`[count]\<leader\>cl`**  
+**`[count]\<leader\>cb`    |NERDComAlignedComment|**  
+Same as |NERDComComment| except that the delimiters are aligned down the 
+left side (\<leader\>cl) or both sides (\<leader\>cb). 
+
+
+**`[count]\<leader\>cu` |NERDComUncommentLine|**  
+Uncomments the selected line(s). 
 
 ## Limitations
 

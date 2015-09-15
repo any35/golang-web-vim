@@ -28,7 +28,7 @@ for more information pls visit [use 256 colors in screen](https://wiki.archlinux
 * [snippets](https://github.com/honza/vim-snippets) snipMate & UltiSnip Snippets
 * [nerdtree-tabs](https://github.com/jistr/vim-nerdtree-tabs) NERDTree and tabs together in Vim, painlessly
 * [bufexplorer](https://github.com/jlanzarotta/bufexplorer) BufExplorer Plugin for Vim
-* [ctrlp](https://github.com/kien/ctrlp.vim)
+* [ctrlp](https://github.com/kien/ctrlp.vim) Fuzzy file, buffer, mru, tag, etc finder.
 * [tagbar](https://github.com/majutsushi/tagbar)
 * [addon-mw-utils](https://github.com/marcweber/vim-addon-mw-utils) interpret a file by function and cache file automatically(required by snipmate)
 * [undotree](https://github.com/mbbill/undotree)
@@ -228,10 +228,35 @@ See [doc/Tabular.txt](http://raw.github.com/godlygeek/tabular/master/doc/Tabular
 `F7` nerdTreeTabs toggle
 
 i### buf explorer
-`F3` open BufExplorer
+`F4` open BufExplorer
 `<Leader>be` BufExplorer 
 after open buf explorer windows, 
 `j` or `k` to choose file, `r` re-order files, `d` or `D` close fiel.
+
+### CtrlP.vim
+* Run `F6` or `:CtrlP` or `:CtrlP [starting-directory]` to invoke CtrlP in find file mode.
+* Run `:CtrlPBuffer` or `:CtrlPMRU` to invoke CtrlP in find buffer or find MRU file mode.
+* Run `:CtrlPMixed` to search in Files, Buffers and MRU files at the same time.
+
+Check `:help ctrlp-commands` and `:help ctrlp-extensions` for other commands.
+
+#### Once CtrlP is open:
+* Press `<F6>` to purge the cache for the current directory to get new files, remove deleted files and apply new ignore options.
+* Press `<c-f>` and `<c-b>` to cycle between modes.
+* Press `<c-d>` to switch to filename only search instead of full path.
+* Press `<c-r>` to switch to regexp mode.
+* Use `<c-j>`, `<c-k>` or the arrow keys to navigate the result list.
+* Use `<c-t>` or `<c-v>`, `<c-x>` to open the selected entry in a new tab or in a new split.
+* Use `<c-n>`, `<c-p>` to select the next/previous string in the prompt's history.
+* Use `<c-y>` to create a new file and its parent directories.
+* Use `<c-z>` to mark/unmark multiple files and `<c-o>` to open them.
+
+Run `:help ctrlp-mappings` or submit `?` in CtrlP for more mapping help.
+
+* Submit two or more dots `..` to go up the directory tree by one or multiple levels.
+* End the input string with a colon `:` followed by a command to execute it on the opening file(s):  
+Use `:25` to jump to line 25.  
+Use `:diffthis` when opening multiple files to run `:diffthis` on the first 4 files.
 
 
 ## Limitations

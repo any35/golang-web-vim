@@ -25,7 +25,7 @@ Plugin 'groenewege/vim-less'
 Plugin 'honza/vim-snippets'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'jlanzarotta/bufexplorer'
-"Plugin 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'marcweber/vim-addon-mw-utils'
 Plugin 'mbbill/undotree'
@@ -184,5 +184,9 @@ au BufNewFile,BufRead *.less set filetype=less
 
 "----------------bufexplorer-----------------------------------------
 nmap <F4> :BufExplorer<CR>
+
+"----------------BtrlP-----------------------------------------
+nmap <F6> :CtrlP<CR>
+
 
 

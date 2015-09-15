@@ -24,10 +24,10 @@ for more information pls visit [use 256 colors in screen](https://wiki.archlinux
 * [snipmate](https://github.com/garbas/vim-snipmate) provide support for textual snippets, similar to TextMate or other Vim plugins like UltiSnips.
 * [Vundle](https://github.com/gmarik/Vundle.vim) plugin manager for vim.
 * [tabular](https://github.com/godlygeek/tabular) Aligning text
-* [less](https://github.com/groenewege/vim-less)
+* [less](https://github.com/groenewege/vim-less) syntax highlighting, indenting and autocompletion for the dynamic stylesheet language `LESS`.
 * [snippets](https://github.com/honza/vim-snippets) snipMate & UltiSnip Snippets
-* [nerdtree-tabs](https://github.com/jistr/vim-nerdtree-tabs)
-* [bufexplorer](https://github.com/jlanzarotta/bufexplorer)
+* [nerdtree-tabs](https://github.com/jistr/vim-nerdtree-tabs) NERDTree and tabs together in Vim, painlessly
+* [bufexplorer](https://github.com/jlanzarotta/bufexplorer) BufExplorer Plugin for Vim
 * [ctrlp](https://github.com/kien/ctrlp.vim)
 * [tagbar](https://github.com/majutsushi/tagbar)
 * [addon-mw-utils](https://github.com/marcweber/vim-addon-mw-utils) interpret a file by function and cache file automatically(required by snipmate)
@@ -221,6 +221,17 @@ Scenario Outline: eating
 ```
 see [tabular](http://vimcasts.org/episodes/aligning-text-with-tabular-vim/) for more information.
 See [doc/Tabular.txt](http://raw.github.com/godlygeek/tabular/master/doc/Tabular.txt) for detailed documentation.
+
+### vimless
+
+### nerdtree-tabs
+`F7` nerdTreeTabs toggle
+
+i### buf explorer
+`F3` open BufExplorer
+`<Leader>be` BufExplorer 
+after open buf explorer windows, 
+`j` or `k` to choose file, `r` re-order files, `d` or `D` close fiel.
 
 
 ## Limitations

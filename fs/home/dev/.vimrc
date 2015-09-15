@@ -24,7 +24,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'groenewege/vim-less'
 Plugin 'honza/vim-snippets'
 Plugin 'jistr/vim-nerdtree-tabs'
-"Plugin 'jlanzarotta/bufexplorer'
+Plugin 'jlanzarotta/bufexplorer'
 "Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'marcweber/vim-addon-mw-utils'
@@ -181,4 +181,8 @@ let g:EasyMotion_smartcase = 1
 "----------------less-----------------------------------------
 nnoremap <Leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
 au BufNewFile,BufRead *.less set filetype=less
+
+"----------------bufexplorer-----------------------------------------
+nmap <F4> :BufExplorer<CR>
+
 

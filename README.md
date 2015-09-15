@@ -39,8 +39,8 @@ for more information pls visit [use 256 colors in screen](https://wiki.archlinux
 * [markdown](https://github.com/plasticboy/vim-markdown) Markdown Vim Mode 
 * [nerdcommenter](https://github.com/scrooloose/nerdcommenter) Vim plugin for intensely orgasmic commenting
 * [nerdtree](https://github.com/scrooloose/nerdtree) A tree explorer plugin for vim.
-* [syntastic](https://github.com/scrooloose/syntastic)
-* [expand-region](https://github.com/terryma/vim-expand-region)
+* [syntastic](https://github.com/scrooloose/syntastic) Syntax checking hacks for vim
+* [expand-region](https://github.com/terryma/vim-expand-region) visually select increasingly larger regions of text using the same key combination.
 * [multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
 * [tlib](https://github.com/tomtom/tlib_vim) (required by snipmatge)
 * [fugitive](https://github.com/tpope/vim-fugitive)
@@ -430,6 +430,9 @@ Uncomments the selected line(s).
 ### NERD tree
 `F7` NERDTreeTabsToggle
 
+### vim-expand-region
+Press `+` to expand the visual selection and `_` to shrink it.
+![Vim completion with animation](https://raw.github.com/terryma/vim-expand-region/master/expand-region.gif)
 
 
 ## Limitations

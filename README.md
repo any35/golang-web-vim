@@ -41,7 +41,7 @@ for more information pls visit [use 256 colors in screen](https://wiki.archlinux
 * [nerdtree](https://github.com/scrooloose/nerdtree) A tree explorer plugin for vim.
 * [syntastic](https://github.com/scrooloose/syntastic) Syntax checking hacks for vim
 * [expand-region](https://github.com/terryma/vim-expand-region) visually select increasingly larger regions of text using the same key combination.
-* [multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
+* [multiple-cursors](https://github.com/terryma/vim-multiple-cursors) True Sublime Text style multiple selections for Vim
 * [tlib](https://github.com/tomtom/tlib_vim) (required by snipmatge)
 * [fugitive](https://github.com/tpope/vim-fugitive)
 * [haml](https://github.com/tpope/vim-haml)
@@ -434,6 +434,32 @@ Uncomments the selected line(s).
 Press `+` to expand the visual selection and `_` to shrink it.
 ![Vim completion with animation](https://raw.github.com/terryma/vim-expand-region/master/expand-region.gif)
 
+### vim-multiple-cursors
+** It's great for quick refactoring**
+![Example1](assets/example1.gif?raw=true)
+*jump to `p` with `fp`
+*select the word under cursor with `<C-n>`
+*do that two more times for the other two occurrences in the function
+*press `c` to change
+*type the replacement
+*press `<Esc>` to quit back to regular Vim
+
+** Add a cursor to each line of your visual selection**
+![Example2](assets/example2.gif?raw=true)
+*select the line with `V`
+*go to the end of the file with `G`
+*press `<C-n>` to add a cursor at the beginning of every line and move to normal mode
+*press `I` to insert at the beginning of the line
+*type `",` move to end of line with `<C-e>`, type another `"` followed by `,`
+*move every cursor down one line with `<C-j>`(this is a custom mapping of mine in Insert mode)
+*hit `<BS>`, now all the words are on the same line
+*the rest is just normal Vim
+
+** Do it backwards too! This is not just a replay of the above gif :)**
+![Example3](assets/example3.gif?raw=true)
+
+** Add multiple cursors using regexes**
+![Example4](assets/example4.gif?raw=true)
 
 ## Limitations
 

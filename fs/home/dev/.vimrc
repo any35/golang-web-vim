@@ -38,7 +38,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'terryma/vim-expand-region'
-"Plugin 'terryma/vim-multiple-cursors'
+Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tomtom/tlib_vim'
 Plugin 'tpope/vim-fugitive'
 "Plugin 'tpope/vim-haml'
@@ -210,4 +210,8 @@ map + <Plug>(expand_region_expand)
 map - <Plug>(expand_region_shrink)
 let g:expand_region_use_select_mode = 1
 
+"----------------vim-multiple-cursors-----------------------------------------
+let g:multi_cursor_exit_from_insert_mode = 0
+inoremap <c-e> <End>
+inoremap <c-h> <Home>
 

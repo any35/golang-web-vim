@@ -29,9 +29,9 @@ for more information pls visit [use 256 colors in screen](https://wiki.archlinux
 * [nerdtree-tabs](https://github.com/jistr/vim-nerdtree-tabs) NERDTree and tabs together in Vim, painlessly
 * [bufexplorer](https://github.com/jlanzarotta/bufexplorer) BufExplorer Plugin for Vim
 * [ctrlp](https://github.com/kien/ctrlp.vim) Fuzzy file, buffer, mru, tag, etc finder.
-* [tagbar](https://github.com/majutsushi/tagbar)
+* [tagbar](https://github.com/majutsushi/tagbar) Vim plugin that displays tags in a window, ordered by scope http://majutsushi.github.com/tagbar/
 * [addon-mw-utils](https://github.com/marcweber/vim-addon-mw-utils) interpret a file by function and cache file automatically(required by snipmate)
-* [undotree](https://github.com/mbbill/undotree)
+* [undotree](https://github.com/mbbill/undotree) The ultimate undo history visualizer for VIM
 * [indent-object](https://github.com/michaeljsmith/vim-indent-object)
 * [indent-guides](https://github.com/nathanaelkane/vim-indent-guides)
 * [html5](https://github.com/othree/html5.vim)
@@ -257,6 +257,12 @@ Run `:help ctrlp-mappings` or submit `?` in CtrlP for more mapping help.
 * End the input string with a colon `:` followed by a command to execute it on the opening file(s):  
 Use `:25` to jump to line 25.  
 Use `:diffthis` when opening multiple files to run `:diffthis` on the first 4 files.
+
+### Tagbar
+`F8` TagbarToggle
+
+### UndoTree
+`F5` UndotreeToggle
 
 
 ## Limitations

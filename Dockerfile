@@ -44,6 +44,7 @@ RUN apt-get update                                                      && \
 
 USER dev
 ENV HOME /home/dev
+WORKDIR /go
 
 # install vim plugins
 RUN mkdir -p ~/.vim/bundle                                              && \
@@ -101,4 +102,16 @@ RUN mkdir -p ~/.vim/bundle                                              && \
         vim-multiple-cursors/.git vim-repeat/.git vim-surround/.git mru.vim/.git \
         YankRing.vim/.git vim-haml/.git vim-snipmate/.git vim-snippets/.git      \
         vim-scala/.git
+
+# enable yeoman
+RUN  sudo apt-get install -y build-essential openssl libssl-dev curl && \
+    curl -sL https://deb.nodesource.com/setup | sudo bash -          && \
+    sudo apt-get install -y nodejs                                   && \
+    sudo npm install -g npm@latest                                   && \
+    sudo npm install -g grunt grunt-cli bower                        && \
+    sudo npm install -g yo gulp                                      && \
+    sudo npm install -g generator-angular generator-webapp           && \
+    sudo apt-get install ruby-full build-essential -y                && \
+    sudo gem install compass --pre
+EXPOSE 9000
 

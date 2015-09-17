@@ -10,9 +10,14 @@ ADD fs/ /
 # install pagkages
 RUN apt-get update                                                      && \
     apt-get install -y ncurses-dev libtolua-dev exuberant-ctags sudo    && \
+    apt-get install -y build-essential openssl libssl-dev curl          && \
     ln -s /usr/include/lua5.2/ /usr/include/lua                         && \
     ln -s /usr/lib/x86_64-linux-gnu/liblua5.2.so /usr/lib/liblua.so     && \
+    curl -sL https://deb.nodesource.com/setup | sudo bash -             && \
+    apt-get install -y nodejs                                           && \
     cd /tmp                                                             && \
+    apt-get install ruby-full build-essential -y                        && \
+    sudo gem install compass --pre                                      && \
 # build and install vim
     git clone --depth 1  https://github.com/vim/vim.git                 && \
     cd vim/src                                                          && \
@@ -104,14 +109,9 @@ RUN mkdir -p ~/.vim/bundle                                              && \
         vim-scala/.git
 
 # enable yeoman
-RUN  sudo apt-get install -y build-essential openssl libssl-dev curl && \
-    curl -sL https://deb.nodesource.com/setup | sudo bash -          && \
-    sudo apt-get install -y nodejs                                   && \
-    sudo npm install -g npm@latest                                   && \
+RUN sudo npm install -g npm@latest                                   && \
     sudo npm install -g grunt grunt-cli bower                        && \
     sudo npm install -g yo gulp                                      && \
-    sudo npm install -g generator-angular generator-webapp           && \
-    sudo apt-get install ruby-full build-essential -y                && \
-    sudo gem install compass --pre
+    sudo npm install -g generator-angular generator-webapp           
 EXPOSE 9000
 

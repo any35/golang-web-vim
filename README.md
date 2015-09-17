@@ -64,6 +64,8 @@ docker run --rm -tiv `pwd`:/go any35/golang-web-vim
  
 ## Plugin Details
 TBD.
+### delimitMate
+`shift+tab` jump to next autocomplete chart
 
 ### neocomplete
 ![Vim completion with animation.](https://f.cloud.github.com/assets/214488/623496/94ed19a2-cf68-11e2-8d33-3aad8a39d7c1.gif)

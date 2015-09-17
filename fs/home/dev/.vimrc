@@ -1,5 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
+set backspace=indent,eol,start      " Allow backspace in insert mode
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -150,7 +151,7 @@ au FileType go nmap <Leader>e <Plug>(go-rename)
 " =================================================================
 
 "-----------------delimitMate-------------------------------------
-
+map <BS> <backspace>
 "-----------------neocomplete------------------------------------
 " neocomplete
 let g:neocomplete#enable_at_startup = 1
@@ -213,5 +214,4 @@ let g:expand_region_use_select_mode = 1
 "----------------vim-multiple-cursors-----------------------------------------
 let g:multi_cursor_exit_from_insert_mode = 0
 inoremap <c-e> <End>
-inoremap <c-h> <Home>
 

@@ -367,6 +367,15 @@ eeeeeeeeeeeee
 `=G` auto indent
   NOTE: jquery syntax is not worked yet!
 
+### markdown
+-   `]]`: go to next header. `<Plug>Markdown_MoveToNextHeader`
+-   `[[`: go to previous header. Contrast with `]c`. `<Plug>Markdown_MoveToPreviousHeader`
+-   `][`: go to next sibling header if any. `<Plug>Markdown_MoveToNextSiblingHeader`
+-   `[]`: go to previous sibling header if any. `<Plug>Markdown_MoveToPreviousSiblingHeader`
+-   `]c`: go to Current header. `<Plug>Markdown_MoveToCurHeader`
+-   `]u`: go to parent header (Up). `<Plug>Markdown_MoveToParentHeader`
+[details document](https://github.com/plasticboy/vim-markdown)
+
 ### nerdcommenter
 The following key mappings are provided by default (there is also a menu 
 provided that contains menu items corresponding to all the below mappings): 

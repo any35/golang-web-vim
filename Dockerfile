@@ -114,4 +114,5 @@ RUN sudo npm install -g npm@latest                                   && \
     sudo npm install -g yo gulp                                      && \
     sudo npm install -g generator-angular generator-webapp           
 EXPOSE 9000
+EXPOSE 35729
 

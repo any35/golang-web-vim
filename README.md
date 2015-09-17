@@ -59,6 +59,8 @@ Run this image from within your go workspace. You can than edit your project usi
 ```
 cd your/go/workspace
 docker run --rm -tiv `pwd`:/go any35/golang-web-vim
+#or you can specify port mapping
+docker run --rm -p 9000:9000 -p 35729:35729  -tiv `pwd`:/go any35/golang-web-vim
 ```
  add `--privileged` flag debugger is needed
  

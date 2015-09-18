@@ -43,8 +43,8 @@ for more information pls visit [use 256 colors in screen](https://wiki.archlinux
 * [expand-region](https://github.com/terryma/vim-expand-region) visually select increasingly larger regions of text using the same key combination.
 * [multiple-cursors](https://github.com/terryma/vim-multiple-cursors) True Sublime Text style multiple selections for Vim
 * [tlib](https://github.com/tomtom/tlib_vim) (required by snipmatge)
-* [fugitive](https://github.com/tpope/vim-fugitive)
-* [haml](https://github.com/tpope/vim-haml)
+* [fugitive](https://github.com/tpope/vim-fugitive) fugitive.vim: a Git wrapper so awesome
+* [haml](https://github.com/tpope/vim-haml) Vim runtime files for Haml, Sass, and SCSS
 * [repeat](https://github.com/tpope/vim-repeat)
 * [surround](https://github.com/tpope/vim-surround)
 * [EasyGrep](https://github.com/vim-scripts/EasyGrep)
@@ -503,6 +503,18 @@ You can also add multiple cursors using a regular expression. The command `Multi
 
 **NOTE:** If at any time you have lingering cursors on screen, you can press `Ctrl-n` in Normal mode and it will remove all prior cursors before starting a new one.
 
+### fugitive
+many command to git.
+* merge conflic
+    1. in a git work directory, input `vim`
+	2. `:Gstatus` show the confilc file list
+	3. move cursor to a file and press `dv`, this will open merge windows
+	4. in the middle window show the merge result, change it and save. after merge, apply the merge by `git add` command.
+
+more information, see the [document](https://github.com/tpope/vim-fugitive)
+
+## vim haml
+TDB.
 
 ## Limitations
 

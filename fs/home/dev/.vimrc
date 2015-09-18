@@ -45,7 +45,7 @@ Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/EasyGrep'
-"Plugin 'vim-scripts/YankRing.vim'
+Plugin 'vim-scripts/YankRing.vim'
 "Plugin 'vim-scripts/mru.vim'
 "Plugin 'vim-scripts/taglist.vim'
 

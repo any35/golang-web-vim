@@ -48,7 +48,7 @@ for more information pls visit [use 256 colors in screen](https://wiki.archlinux
 * [repeat](https://github.com/tpope/vim-repeat) repeat.vim: enable repeating supported plugin maps with "."
 * [surround](https://github.com/tpope/vim-surround) surround.vim: quoting/parenthesizing made simple
 * [EasyGrep](https://github.com/vim-scripts/EasyGrep) Fast and Easy Find and Replace Across Multiple Files 
-* [YankRing](https://github.com/vim-scripts/YankRing.vim)
+* [YankRing](https://github.com/vim-scripts/YankRing.vim) Maintains a history of previous yanks, changes and deletes
 * [mru](https://github.com/vim-scripts/mru.vim)
 * [taglist](https://github.com/vim-scripts/taglist.vim)
 
@@ -617,6 +617,21 @@ Commands:
 
     + `:GrepOptions [arg]`
         Open a window to set grep options.
+
+
+### YankRing
+Examples:
+- `yy`   - Adds the current line to the yankring.
+- `dd`   - Adds the current line to the yankring and deletes it.
+- `5yw`  - Adds 5 words to the yankring.
+- `"ade` - Deletes the word, and puts it into both the yankring and the "a register.
+- `cw`   Changes the word and stores the previous value in the yankring.
+- `10"zyy` - Places 10 lines into both the yankring and the "z register.
+- `:1,4YRYankRange`   - Similar to 1,4y
+- `:3,$YRDeleteRange`  - Similar to 3,\$d
+
+see the [document](https://github.com/vim-scripts/YankRing.vim/blob/master/README) for guid.
+
 ## Limitations
 
 This image lacks [gdb](https://golang.org/doc/gdb) support. If anyone has managed to get it working on this image, please let me know (breakpoints are not working for me).

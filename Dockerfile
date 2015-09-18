@@ -98,6 +98,9 @@ RUN mkdir -p ~/.vim/bundle                                              && \
     git clone --depth 1 https://github.com/vim-scripts/mru.vim.git             && \
     git clone --depth 1 https://github.com/vim-scripts/taglist.vim.git         && \
     vim +PluginInstall +qall                                                   && \
+    ln /home/dev/.vimrc /root/.vimrc                                           && \
+    ln /home/dev/.tmux.conf /root/.tmux.conf                                   && \
+    ln -s /home/dev/.vim /root/.vim                                            && \
 # cleanup
     rm -rf Vundle.vim/.git vim-go/.git tagbar/.git neocomplete.vim/.git          \
         nerdtree/.git vim-airline/.git vim-fugitive/.git                         \

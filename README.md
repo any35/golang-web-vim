@@ -45,8 +45,8 @@ for more information pls visit [use 256 colors in screen](https://wiki.archlinux
 * [tlib](https://github.com/tomtom/tlib_vim) (required by snipmatge)
 * [fugitive](https://github.com/tpope/vim-fugitive) fugitive.vim: a Git wrapper so awesome
 * [haml](https://github.com/tpope/vim-haml) Vim runtime files for Haml, Sass, and SCSS
-* [repeat](https://github.com/tpope/vim-repeat)
-* [surround](https://github.com/tpope/vim-surround)
+* [repeat](https://github.com/tpope/vim-repeat) repeat.vim: enable repeating supported plugin maps with "."
+* [surround](https://github.com/tpope/vim-surround) surround.vim: quoting/parenthesizing made simple
 * [EasyGrep](https://github.com/vim-scripts/EasyGrep)
 * [YankRing](https://github.com/vim-scripts/YankRing.vim)
 * [mru](https://github.com/vim-scripts/mru.vim)
@@ -526,6 +526,62 @@ The following plugins support repeat.vim:
 - unimpaired.vim
 - commentary.vim
 - vim-easyclip
+
+### surround 
+It's easiest to explain with examples.  Press `cs"'` inside
+
+    "Hello world!"
+
+to change it to
+
+    'Hello world!'
+
+Now press `cs'<q>` to change it to
+
+    <q>Hello world!</q>
+
+To go full circle, press `cst"` to get
+
+    "Hello world!"
+
+To remove the delimiters entirely, press `ds"`.
+
+    Hello world!
+
+Now with the cursor on "Hello", press `ysiw]` (`iw` is a text object).
+
+    [Hello] world!
+
+Let's make that braces and add some space (use `}` instead of `{` for no
+space): `cs]{`
+
+    { Hello } world!
+
+Now wrap the entire line in parentheses with `yssb` or `yss)`.
+
+    ({ Hello } world!)
+
+Revert to the original text: `ds{ds)`
+
+    Hello world!
+
+Emphasize hello: `ysiw<em>`
+
+    <em>Hello</em> world!
+
+Finally, let's try out visual mode. Press a capital V (for linewise
+visual mode) followed by `S<p class="important">`.
+
+    <p class="important">
+      <em>Hello</em> world!
+    </p>
+
+This plugin is very powerful for HTML and XML editing, a niche which
+currently seems underfilled in Vim land.  (As opposed to HTML/XML
+*inserting*, for which many plugins are available).  Adding, changing,
+and removing pairs of tags simultaneously is a breeze.
+
+The `.` command will work with `ds`, `cs`, and `yss` 
 
 ## Limitations
 

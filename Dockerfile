@@ -39,6 +39,7 @@ RUN apt-get update                                                      && \
     mkdir -p /usr/src/go/bin/                                           && \
     mv /go/bin/* /usr/src/go/bin/                                       && \
     echo 'export PATH=/usr/src/go/bin/:$PATH' >> /etc/profile           && \
+    echo 'export TERM="xterm-256color"' >> /etc/profile                 && \
     source /etc/profile                                                 && \
 # add dev user
     adduser dev --disabled-password --gecos ""                          && \

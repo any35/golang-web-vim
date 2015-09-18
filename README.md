@@ -513,8 +513,19 @@ many command to git.
 
 more information, see the [document](https://github.com/tpope/vim-fugitive)
 
-## vim haml
+### vim haml
 TDB.
+
+### repeat.vim
+If you've ever tried using the `.` command after a plugin map, you were likely disappointed to discover it only repeated the last native command inside that map, rather than the map as a whole. That disappointment ends today. Repeat.vim remaps `.` in a way that plugins can tap into it.
+
+The following plugins support repeat.vim:
+- surround.vim
+- speeddating.vim
+- abolish.vim
+- unimpaired.vim
+- commentary.vim
+- vim-easyclip
 
 ## Limitations
 

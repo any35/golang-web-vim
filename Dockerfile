@@ -38,7 +38,6 @@ RUN apt-get update                                                      && \
     mkdir -p /usr/src/go/bin/                                           && \
     mv /go/bin/* /usr/src/go/bin/                                       && \
     echo 'export PATH=/usr/src/go/bin/:$PATH' >> /etc/profile           && \
-    source /etc/profile                                                 && \
 # add dev user
     adduser dev --disabled-password --gecos ""                          && \
     echo "ALL            ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers     && \

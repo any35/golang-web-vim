@@ -47,7 +47,7 @@ for more information pls visit [use 256 colors in screen](https://wiki.archlinux
 * [haml](https://github.com/tpope/vim-haml) Vim runtime files for Haml, Sass, and SCSS
 * [repeat](https://github.com/tpope/vim-repeat) repeat.vim: enable repeating supported plugin maps with "."
 * [surround](https://github.com/tpope/vim-surround) surround.vim: quoting/parenthesizing made simple
-* [EasyGrep](https://github.com/vim-scripts/EasyGrep)
+* [EasyGrep](https://github.com/vim-scripts/EasyGrep) Fast and Easy Find and Replace Across Multiple Files 
 * [YankRing](https://github.com/vim-scripts/YankRing.vim)
 * [mru](https://github.com/vim-scripts/mru.vim)
 * [taglist](https://github.com/vim-scripts/taglist.vim)
@@ -583,6 +583,40 @@ and removing pairs of tags simultaneously is a breeze.
 
 The `.` command will work with `ds`, `cs`, and `yss` 
 
+### easy grep
+Keymappings:
++ `<Leader>vv`  - Grep for the word under the cursor, match all occurences,
+                  like |gstar|
++ `<Leader>vV`  - Grep for the word under the cursor, match whole word, like 
+                  |star|
++ `<Leader>va`  - Like vv, but add to existing list
+  `<Leader>vA`  - Like vV, but add to existing list
+  `<Leader>vr`  - Perform a global search search on the word under the cursor
+                  and prompt for a pattern with which to replace it.
+  `<Leader>vo`  - Select the files to search in and set grep options
+
+Commands:
+    + `:Grep [arg]`
+        Search for the specified arg, like <Leader>vv.  When an ! is added,
+        search like <Leader>vV
+
+    + `:GrepAdd [arg]`
+        Search for the specified arg, add to existing file list, as in
+        <Leader>va.  When an ! is added, search like <Leader>vA
+
+    + `:Replace [target] [replacement]`
+        Perform a global search and replace.  The function searches
+        the same set of files a grep for the desired target and opens a dialog to
+        confirm replacement.
+    
+    + `:ReplaceUndo`
+        Undoes the last :Replace operation.  Does not stack successive
+        searches; only the last replace may be undone.  This function may not
+        work well when edits are made between a call to Replace and a call to
+        ReplaceUndo.
+
+    + `:GrepOptions [arg]`
+        Open a window to set grep options.
 ## Limitations
 
 This image lacks [gdb](https://golang.org/doc/gdb) support. If anyone has managed to get it working on this image, please let me know (breakpoints are not working for me).

@@ -632,6 +632,35 @@ Examples:
 
 see the [document](https://github.com/vim-scripts/YankRing.vim/blob/master/README) for guid.
 
+### mru
+To list and edit files from the MRU list, you can use the `:MRU` command.
+The `:MRU` command displays the MRU file list in a temporary Vim window.  If
+the MRU window is already opened, then the MRU list displayed in the window
+is refreshed.
+
+You can press the `o` key to open the file name under the cursor in the
+MRU window in a new window. You can also press `<Shift-Enter>` instead of `o`
+to open the file in a new window.
+
+To open a file from the MRU window in read-only mode (view), press the `v`
+key.
+
+To open a file from the MRU window in a new tab, press the `t` key.  If the
+file is already opened in a window in the current or in another tab, then
+the cursor is moved to that tab. Otherwise, a new tab is opened.
+
+You can open multiple files from the MRU window by specifying a count before
+pressing `<Enter>` or `v` or `o` or `t`. You can also visually (using
+linewise visual mode) select multiple filenames and invoke the commands to
+open the files. Each selected file will be opened in a separate window or
+tab.
+
+You can press the `u` key in the MRU window to update the file list. This is
+useful if you keep the MRU window open always.
+
+You can close the MRU window by pressing the `q` key or the <Esc> key or
+using one of the Vim window commands.
+
 ## Limitations
 
 This image lacks [gdb](https://golang.org/doc/gdb) support. If anyone has managed to get it working on this image, please let me know (breakpoints are not working for me).

@@ -43,14 +43,14 @@ for more information pls visit [use 256 colors in screen](https://wiki.archlinux
 * [expand-region](https://github.com/terryma/vim-expand-region) visually select increasingly larger regions of text using the same key combination.
 * [multiple-cursors](https://github.com/terryma/vim-multiple-cursors) True Sublime Text style multiple selections for Vim
 * [tlib](https://github.com/tomtom/tlib_vim) (required by snipmatge)
-* [fugitive](https://github.com/tpope/vim-fugitive)
-* [haml](https://github.com/tpope/vim-haml)
-* [repeat](https://github.com/tpope/vim-repeat)
-* [surround](https://github.com/tpope/vim-surround)
-* [EasyGrep](https://github.com/vim-scripts/EasyGrep)
-* [YankRing](https://github.com/vim-scripts/YankRing.vim)
-* [mru](https://github.com/vim-scripts/mru.vim)
-* [taglist](https://github.com/vim-scripts/taglist.vim)
+* [fugitive](https://github.com/tpope/vim-fugitive) fugitive.vim: a Git wrapper so awesome
+* [haml](https://github.com/tpope/vim-haml) Vim runtime files for Haml, Sass, and SCSS
+* [repeat](https://github.com/tpope/vim-repeat) repeat.vim: enable repeating supported plugin maps with "."
+* [surround](https://github.com/tpope/vim-surround) surround.vim: quoting/parenthesizing made simple
+* [EasyGrep](https://github.com/vim-scripts/EasyGrep) Fast and Easy Find and Replace Across Multiple Files 
+* [YankRing](https://github.com/vim-scripts/YankRing.vim) Maintains a history of previous yanks, changes and deletes
+* [mru](https://github.com/vim-scripts/mru.vim) Plugin to manage Most Recently Used (MRU) files
+* [taglist](https://github.com/vim-scripts/taglist.vim) Source code browser (supports C/C++, java, perl, python, tcl, sql, php, etc)
 
 ## Usage
 
@@ -502,6 +502,174 @@ Two additional keys are also mapped:
 You can also add multiple cursors using a regular expression. The command `MultipleCursorsFind` accepts a range and a pattern, and it will create a virtual cursor at the end of every match within the range. If no range is passed in, then it defaults to the entire buffer.
 
 **NOTE:** If at any time you have lingering cursors on screen, you can press `Ctrl-n` in Normal mode and it will remove all prior cursors before starting a new one.
+
+### fugitive
+many command to git.
+* merge conflic
+    1. in a git work directory, input `vim`
+	2. `:Gstatus` show the confilc file list
+	3. move cursor to a file and press `dv`, this will open merge windows
+	4. in the middle window show the merge result, change it and save. after merge, apply the merge by `git add` command.
+
+more information, see the [document](https://github.com/tpope/vim-fugitive)
+
+### vim haml
+TDB.
+
+### repeat.vim
+If you've ever tried using the `.` command after a plugin map, you were likely disappointed to discover it only repeated the last native command inside that map, rather than the map as a whole. That disappointment ends today. Repeat.vim remaps `.` in a way that plugins can tap into it.
+
+The following plugins support repeat.vim:
+- surround.vim
+- speeddating.vim
+- abolish.vim
+- unimpaired.vim
+- commentary.vim
+- vim-easyclip
+
+### surround 
+It's easiest to explain with examples.  Press `cs"'` inside
+
+    "Hello world!"
+
+to change it to
+
+    'Hello world!'
+
+Now press `cs'<q>` to change it to
+
+    <q>Hello world!</q>
+
+To go full circle, press `cst"` to get
+
+    "Hello world!"
+
+To remove the delimiters entirely, press `ds"`.
+
+    Hello world!
+
+Now with the cursor on "Hello", press `ysiw]` (`iw` is a text object).
+
+    [Hello] world!
+
+Let's make that braces and add some space (use `}` instead of `{` for no
+space): `cs]{`
+
+    { Hello } world!
+
+Now wrap the entire line in parentheses with `yssb` or `yss)`.
+
+    ({ Hello } world!)
+
+Revert to the original text: `ds{ds)`
+
+    Hello world!
+
+Emphasize hello: `ysiw<em>`
+
+    <em>Hello</em> world!
+
+Finally, let's try out visual mode. Press a capital V (for linewise
+visual mode) followed by `S<p class="important">`.
+
+    <p class="important">
+      <em>Hello</em> world!
+    </p>
+
+This plugin is very powerful for HTML and XML editing, a niche which
+currently seems underfilled in Vim land.  (As opposed to HTML/XML
+*inserting*, for which many plugins are available).  Adding, changing,
+and removing pairs of tags simultaneously is a breeze.
+
+The `.` command will work with `ds`, `cs`, and `yss` 
+
+### easy grep
+Keymappings:
++ `<Leader>vv`  - Grep for the word under the cursor, match all occurences,
+                  like |gstar|
++ `<Leader>vV`  - Grep for the word under the cursor, match whole word, like 
+                  |star|
++ `<Leader>va`  - Like vv, but add to existing list
+  `<Leader>vA`  - Like vV, but add to existing list
+  `<Leader>vr`  - Perform a global search search on the word under the cursor
+                  and prompt for a pattern with which to replace it.
+  `<Leader>vo`  - Select the files to search in and set grep options
+
+Commands:
+    + `:Grep [arg]`
+        Search for the specified arg, like <Leader>vv.  When an ! is added,
+        search like <Leader>vV
+
+    + `:GrepAdd [arg]`
+        Search for the specified arg, add to existing file list, as in
+        <Leader>va.  When an ! is added, search like <Leader>vA
+
+    + `:Replace [target] [replacement]`
+        Perform a global search and replace.  The function searches
+        the same set of files a grep for the desired target and opens a dialog to
+        confirm replacement.
+    
+    + `:ReplaceUndo`
+        Undoes the last :Replace operation.  Does not stack successive
+        searches; only the last replace may be undone.  This function may not
+        work well when edits are made between a call to Replace and a call to
+        ReplaceUndo.
+
+    + `:GrepOptions [arg]`
+        Open a window to set grep options.
+
+
+### YankRing
+Examples:
+- `yy`   - Adds the current line to the yankring.
+- `dd`   - Adds the current line to the yankring and deletes it.
+- `5yw`  - Adds 5 words to the yankring.
+- `"ade` - Deletes the word, and puts it into both the yankring and the "a register.
+- `cw`   Changes the word and stores the previous value in the yankring.
+- `10"zyy` - Places 10 lines into both the yankring and the "z register.
+- `:1,4YRYankRange`   - Similar to 1,4y
+- `:3,$YRDeleteRange`  - Similar to 3,\$d
+
+see the [document](https://github.com/vim-scripts/YankRing.vim/blob/master/README) for guid.
+
+### mru
+To list and edit files from the MRU list, you can use the `:MRU` command.
+The `:MRU` command displays the MRU file list in a temporary Vim window.  If
+the MRU window is already opened, then the MRU list displayed in the window
+is refreshed.
+
+You can press the `o` key to open the file name under the cursor in the
+MRU window in a new window. You can also press `<Shift-Enter>` instead of `o`
+to open the file in a new window.
+
+To open a file from the MRU window in read-only mode (view), press the `v`
+key.
+
+To open a file from the MRU window in a new tab, press the `t` key.  If the
+file is already opened in a window in the current or in another tab, then
+the cursor is moved to that tab. Otherwise, a new tab is opened.
+
+You can open multiple files from the MRU window by specifying a count before
+pressing `<Enter>` or `v` or `o` or `t`. You can also visually (using
+linewise visual mode) select multiple filenames and invoke the commands to
+open the files. Each selected file will be opened in a separate window or
+tab.
+
+You can press the `u` key in the MRU window to update the file list. This is
+useful if you keep the MRU window open always.
+
+You can close the MRU window by pressing the `q` key or the <Esc> key or
+using one of the Vim window commands.
+
+
+### taglist
++ `:ta foo_bar` move cursor to function foo_bat
++ `[{` move to prev first {
++ `}]` move to next first {
++ `{` move to prev empty line
++ `}` move to next empty line
++ `gd` goto to define
++ `<C-]>` move to var/function define, `<C-o>` go back
 
 
 ## Limitations

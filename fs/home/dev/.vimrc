@@ -47,7 +47,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/EasyGrep'
 Plugin 'vim-scripts/YankRing.vim'
 Plugin 'vim-scripts/mru.vim'
-"Plugin 'vim-scripts/taglist.vim'
+Plugin 'vim-scripts/taglist.vim'
 
 " all of your Plugins must be added before the following line
 call vundle#end()            " required

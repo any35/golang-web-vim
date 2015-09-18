@@ -49,8 +49,8 @@ for more information pls visit [use 256 colors in screen](https://wiki.archlinux
 * [surround](https://github.com/tpope/vim-surround) surround.vim: quoting/parenthesizing made simple
 * [EasyGrep](https://github.com/vim-scripts/EasyGrep) Fast and Easy Find and Replace Across Multiple Files 
 * [YankRing](https://github.com/vim-scripts/YankRing.vim) Maintains a history of previous yanks, changes and deletes
-* [mru](https://github.com/vim-scripts/mru.vim)
-* [taglist](https://github.com/vim-scripts/taglist.vim)
+* [mru](https://github.com/vim-scripts/mru.vim) Plugin to manage Most Recently Used (MRU) files
+* [taglist](https://github.com/vim-scripts/taglist.vim) Source code browser (supports C/C++, java, perl, python, tcl, sql, php, etc)
 
 ## Usage
 
@@ -660,6 +660,17 @@ useful if you keep the MRU window open always.
 
 You can close the MRU window by pressing the `q` key or the <Esc> key or
 using one of the Vim window commands.
+
+
+### taglist
++ `:ta foo_bar` move cursor to function foo_bat
++ `[{` move to prev first {
++ `}]` move to next first {
++ `{` move to prev empty line
++ `}` move to next empty line
++ `gd` goto to define
++ `<C-]>` move to var/function define, `<C-o>` go back
+
 
 ## Limitations
 

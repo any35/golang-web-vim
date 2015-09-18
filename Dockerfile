@@ -40,7 +40,6 @@ RUN apt-get update                                                      && \
     mv /go/bin/* /usr/src/go/bin/                                       && \
     echo 'export PATH=/usr/src/go/bin/:$PATH' >> /etc/profile           && \
     echo 'export TERM="xterm-256color"' >> /etc/profile                 && \
-    source /etc/profile                                                 && \
 # add dev user
     adduser dev --disabled-password --gecos ""                          && \
     echo "ALL            ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers     && \

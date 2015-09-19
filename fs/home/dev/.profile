@@ -1,3 +1,4 @@
+
 # ~/.profile: executed by Bourne-compatible login shells.
 
 if [ "$BASH" ]; then
@@ -12,5 +13,7 @@ else
   export TERM='xterm-color'
 fi
 
-mesg n
+export PATH=/usr/local/go/bin/:$PATH
+export TERM="xterm-256color"
 
+mesg n

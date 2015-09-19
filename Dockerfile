@@ -40,6 +40,7 @@ RUN adduser dev --disabled-password --gecos ""                          && \
 ADD fs/ /
 USER dev
 ENV HOME /home/dev
+ENV TERM xterm-256color
 WORKDIR /go
 EXPOSE 9000
 EXPOSE 35729
@@ -108,6 +109,7 @@ RUN cd /tmp                                                                    &
 RUN vim +PluginInstall +qall                                                   && \
     sudo ln /home/dev/.vimrc /root/.vimrc                                      && \
     sudo ln /home/dev/.tmux.conf /root/.tmux.conf                              && \
+    sudo ln /home/dev/.profile /root/.profile                                  && \
     sudo ln -s /home/dev/.vim /root/.vim                                       && \
 # enable yeoman
     sudo npm install -g npm@latest                                             && \

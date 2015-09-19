@@ -20,6 +20,8 @@ RUN adduser dev --disabled-password --gecos ""                          && \
     apt-get install -y nodejs                                           && \
     echo 'export PATH=/usr/local/go/bin/:$PATH' >> /etc/profile         && \
     echo 'export TERM="xterm-256color"' >> /etc/profile                 && \
+    echo 'export PATH=/usr/local/go/bin/:$PATH' >> /root/.profile       && \
+    echo 'export TERM="xterm-256color"' >> /root/.profile               && \
     ln -s /usr/include/lua5.2/ /usr/include/lua                         && \
     ln -s /usr/lib/x86_64-linux-gnu/liblua5.2.so /usr/lib/liblua.so     && \
     gem install compass --pre                                           && \
@@ -34,7 +36,7 @@ RUN adduser dev --disabled-password --gecos ""                          && \
     go get github.com/golang/lint/golint                                && \
     go get github.com/kisielk/errcheck                                  && \
     go get github.com/jstemmer/gotags                                   && \
-    sudo mkdir -p /usr/local/go/bin/                                      && \
+    sudo mkdir -p /usr/local/go/bin/                                    && \
     sudo mv /go/bin/* /usr/local/go/bin/ 
 
 ADD fs/ /
@@ -109,7 +111,6 @@ RUN cd /tmp                                                                    &
 RUN vim +PluginInstall +qall                                                   && \
     sudo ln /home/dev/.vimrc /root/.vimrc                                      && \
     sudo ln /home/dev/.tmux.conf /root/.tmux.conf                              && \
-    sudo ln /home/dev/.profile /root/.profile                                  && \
     sudo ln -s /home/dev/.vim /root/.vim                                       && \
 # enable yeoman
     sudo npm install -g npm@latest                                             && \

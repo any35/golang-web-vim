@@ -11,6 +11,7 @@ ADD fs/ /
 RUN apt-get update                                                      && \
     apt-get install -y ncurses-dev libtolua-dev exuberant-ctags sudo    && \
     apt-get install -y build-essential openssl libssl-dev curl          && \
+    apt-get install -y tmux                                             && \
     ln -s /usr/include/lua5.2/ /usr/include/lua                         && \
     ln -s /usr/lib/x86_64-linux-gnu/liblua5.2.so /usr/lib/liblua.so     && \
     curl -sL https://deb.nodesource.com/setup | sudo bash -             && \
@@ -38,6 +39,7 @@ RUN apt-get update                                                      && \
     mkdir -p /usr/src/go/bin/                                           && \
     mv /go/bin/* /usr/src/go/bin/                                       && \
     echo 'export PATH=/usr/src/go/bin/:$PATH' >> /etc/profile           && \
+    echo 'export TERM="xterm-256color"' >> /etc/profile                 && \
 # add dev user
     adduser dev --disabled-password --gecos ""                          && \
     echo "ALL            ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers     && \
@@ -96,6 +98,9 @@ RUN mkdir -p ~/.vim/bundle                                              && \
     git clone --depth 1 https://github.com/vim-scripts/mru.vim.git             && \
     git clone --depth 1 https://github.com/vim-scripts/taglist.vim.git         && \
     vim +PluginInstall +qall                                                   && \
+    ln /home/dev/.vimrc /root/.vimrc                                           && \
+    ln /home/dev/.tmux.conf /root/.tmux.conf                                   && \
+    ln -s /home/dev/.vim /root/.vim                                            && \
 # cleanup
     rm -rf Vundle.vim/.git vim-go/.git tagbar/.git neocomplete.vim/.git          \
         nerdtree/.git vim-airline/.git vim-fugitive/.git                         \

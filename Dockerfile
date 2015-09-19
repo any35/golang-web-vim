@@ -18,10 +18,10 @@ RUN adduser dev --disabled-password --gecos ""                          && \
     mkdir -p /home/dev /go                                              && \
     chown -R dev:dev /home/dev /go                                      && \
     apt-get install -y nodejs                                           && \
-    echo 'export PATH=/usr/local/go/bin/:$PATH' >> /etc/profile         && \
-    echo 'export TERM="xterm-256color"' >> /etc/profile                 && \
-    echo 'export PATH=/usr/local/go/bin/:$PATH' >> /root/.profile       && \
-    echo 'export TERM="xterm-256color"' >> /root/.profile               && \
+    echo 'PATH=/usr/local/go/bin/:$PATH' >> /etc/environment            && \
+    echo 'TERM="xterm-256color"' >> /etc/environment                    && \
+    echo 'PATH=/usr/local/go/bin/:$PATH' >> /root/.profile              && \
+    echo 'TERM="xterm-256color"' >> /root/.profile                      && \
     ln -s /usr/include/lua5.2/ /usr/include/lua                         && \
     ln -s /usr/lib/x86_64-linux-gnu/liblua5.2.so /usr/lib/liblua.so     && \
     gem install compass --pre                                           && \

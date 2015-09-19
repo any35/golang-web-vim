@@ -13,7 +13,7 @@ else
   export TERM='xterm-color'
 fi
 
-export PATH=/usr/local/go/bin/:$PATH
-export TERM="xterm-256color"
+PATH=/usr/local/go/bin/:$PATH
+TERM="xterm-256color"
 
 mesg n

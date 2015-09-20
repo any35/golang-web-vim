@@ -1,0 +1,5 @@
+#startup_message off
+escape ^Zz
+defscrollback 5120
+
+

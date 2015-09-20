@@ -10,7 +10,7 @@ RUN adduser dev --disabled-password --gecos ""                          && \
     apt-get update                                                      && \
     curl -sL https://deb.nodesource.com/setup | bash -                  && \
     apt-get install -y ncurses-dev libtolua-dev exuberant-ctags sudo       \
-        apt-utils                                                       && \
+        apt-utils screen                                                && \
     apt-get install -y curl build-essential openssl libssl-dev tmux        \
         autotools-dev automake                                             \
         libevent-dev cmake ruby-full build-essential                    && \
@@ -111,6 +111,7 @@ RUN cd /tmp                                                                    &
 RUN vim +PluginInstall +qall                                                   && \
     sudo ln /home/dev/.vimrc /root/.vimrc                                      && \
     sudo ln /home/dev/.tmux.conf /root/.tmux.conf                              && \
+    sudo ln /home/dev/tmux-panes /root/tmux-panes                              && \
     sudo ln -s /home/dev/.vim /root/.vim                                       && \
 # enable yeoman
     sudo npm install -g npm@latest                                             && \

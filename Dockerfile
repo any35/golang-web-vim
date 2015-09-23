@@ -8,7 +8,7 @@ MAINTAINER any35 hupeng.net@hotmail.com
 # add dev user
 RUN adduser dev --disabled-password --gecos ""                          && \
     apt-get update                                                      && \
-    curl -sL https://deb.nodesource.com/setup | bash -                  && \
+    curl -sL https://deb.nodesource.com/setup_4.x | bash -              && \
     apt-get install -y ncurses-dev libtolua-dev exuberant-ctags sudo       \
         apt-utils screen                                                && \
     apt-get install -y curl build-essential openssl libssl-dev tmux        \

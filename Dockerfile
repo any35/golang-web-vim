@@ -8,7 +8,6 @@ MAINTAINER any35 hupeng.net@hotmail.com
 # add dev user
 RUN adduser dev --disabled-password --gecos ""                          && \
     apt-get update                                                      && \
-    curl -sL https://deb.nodesource.com/setup_4.x | bash -              && \
     apt-get install -y ncurses-dev libtolua-dev exuberant-ctags sudo       \
         apt-utils screen                                                && \
     apt-get install -y curl build-essential openssl libssl-dev tmux        \
@@ -17,16 +16,15 @@ RUN adduser dev --disabled-password --gecos ""                          && \
     echo "ALL            ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers     && \
     mkdir -p /home/dev /go                                              && \
     chown -R dev:dev /home/dev /go                                      && \
-    apt-get install -y nodejs                                           && \
     echo 'PATH=/usr/local/go/bin/:$PATH' >> /etc/environment            && \
     echo 'TERM="xterm-256color"' >> /etc/environment                    && \
     echo 'PATH=/usr/local/go/bin/:$PATH' >> /root/.bashrc               && \
     echo 'TERM="xterm-256color"' >> /root/.bashrc                       && \
-    echo 'TERM="xterm-256color"' >> ~/.bashrc                           && \
+    echo 'TERM="xterm-256color"' >> /home/dev/.bashrc                   && \
     sed -i 's/#force_color_prompt=yes/force_color_prompt=yes/g'            \
-        ~/.bashrc                                                       && \
+        /home/dev/.bashrc                                               && \
     echo 'PS1=`echo $PS1|sed "s/\\\\\\\\\\w/\\\\\\\\\\W/g"`' >>            \
-        ~/.bashrc                                                       && \
+        /home/dev/.bashrc                                               && \
     ln -s /usr/include/lua5.2/ /usr/include/lua                         && \
     ln -s /usr/lib/x86_64-linux-gnu/liblua5.2.so /usr/lib/liblua.so     && \
     gem install compass --pre                                           && \
@@ -67,8 +65,6 @@ RUN cd /tmp                                                                    &
     sudo make install && cd /tmp && rm -rf vim/                                && \
 # cleanup
     sudo rm -rf /go/src/* /go/pkg                                              && \
-# cleanup
-    sudo rm -rf /go/src/* /go/pkg                                              && \
     sudo apt-get remove -y ncurses-dev                                         && \
     sudo apt-get autoremove -y                                                 && \
     sudo apt-get clean && rm -rf /tmp/* /var/tmp/*                             && \
@@ -102,6 +98,8 @@ RUN cd /tmp                                                                    &
     git clone --depth 1 https://github.com/pangloss/vim-javascript.git && rm -rf vim-javascript/.git                && \
     git clone --depth 1 https://github.com/plasticboy/vim-markdown.git && rm -rf vim-markdown/.git                  && \
     git clone --depth 1 https://github.com/scrooloose/nerdcommenter.git && rm -rf nerdcommenter/.git                && \
+    git clone --depth 1 https://github.com/scrooloose/nerdtree.git && rm -rf nerdtree/.git                          && \
+    git clone --depth 1 https://github.com/scrooloose/syntastic.git && rm -rf syntastic/.git                        && \
     git clone --depth 1 https://github.com/terryma/vim-expand-region.git && rm -rf vim-expand-region/.git           && \
     git clone --depth 1 https://github.com/terryma/vim-multiple-cursors.git && rm -rf vim-multiple-cursors/.git     && \
     git clone --depth 1 https://github.com/tomtom/tlib_vim.git && rm -rf tlib_vim/.git                              && \
@@ -112,16 +110,17 @@ RUN cd /tmp                                                                    &
     git clone --depth 1 https://github.com/vim-scripts/EasyGrep.git && rm -rf EasyGrep/.git                         && \
     git clone --depth 1 https://github.com/vim-scripts/YankRing.vim.git && rm -rf YankRing/.git                     && \
     git clone --depth 1 https://github.com/vim-scripts/mru.vim.git && rm -rf mru.vim/.git                           && \
-    git clone --depth 1 https://github.com/vim-scripts/taglist.vim.git && rm -rf taglist.vim/.git                   
-RUN vim +PluginInstall +qall                                                   && \
+    git clone --depth 1 https://github.com/vim-scripts/taglist.vim.git && rm -rf taglist.vim/.git                   && \
+    vim +PluginInstall +qall                                                   && \
     sudo ln /home/dev/.vimrc /root/.vimrc                                      && \
     sudo ln /home/dev/.tmux.conf /root/.tmux.conf                              && \
     sudo ln /home/dev/tmux-panes /root/tmux-panes                              && \
-    sudo ln -s /home/dev/.vim /root/.vim                                       && \
+    sudo ln -s /home/dev/.vim /root/.vim
 # enable yeoman
-    sudo npm install -g npm@latest                                             && \
-    sudo npm upgrade -g npm                                                    && \
+RUN cd /tmp && wget https://nodejs.org/dist/v4.1.1/node-v4.1.1-linux-x64.tar.gz && \
+    sudo tar -C /usr/ --strip-components 1 -xzf node-v4.1.1-linux-x64.tar.gz   && \
+    sudo ln /usr/bin/node /usr/bin/nodejs && rm -rf /tmp/node-v4*              && \
+    sudo chmod 777 /usr/bin/node /usr/bin/npm /usr/bin/nodejs                  && \
     sudo npm install -g grunt grunt-cli bower                                  && \
-    sudo npm install -g yo gulp                                                && \
-    sudo npm install -g generator-angular generator-webapp                     && \           
-    sudo npm install -g generator-karma
+    sudo npm install -g yo gulp generator-karma                                && \
+    sudo npm install -g generator-angular generator-webapp           

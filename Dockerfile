@@ -119,7 +119,8 @@ RUN vim +PluginInstall +qall                                                   &
     sudo ln -s /home/dev/.vim /root/.vim                                       && \
 # enable yeoman
     sudo npm install -g npm@latest                                             && \
+    sudo npm upgrade -g npm                                                    && \
     sudo npm install -g grunt grunt-cli bower                                  && \
     sudo npm install -g yo gulp                                                && \
-    sudo npm install -g generator-angular generator-webapp           
-
+    sudo npm install -g generator-angular generator-webapp                     && \           
+    sudo npm install -g generator-karma

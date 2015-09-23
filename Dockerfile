@@ -20,10 +20,10 @@ RUN adduser dev --disabled-password --gecos ""                          && \
     echo 'TERM="xterm-256color"' >> /etc/environment                    && \
     echo 'PATH=/usr/local/go/bin/:$PATH' >> /root/.bashrc               && \
     echo 'TERM="xterm-256color"' >> /root/.bashrc                       && \
-    echo 'TERM="xterm-256color"' >> ~/.bashrc                           && \
+    echo 'TERM="xterm-256color"' >> /home/dev/.bashrc                   && \
     sed -i 's/#force_color_prompt=yes/force_color_prompt=yes/g'            \
-        ~/.bashrc                                                       && \
-    echo 'PS1=`echo $PS1|sed "s/\\\\\\w/\\\\\\W/g"`' >> ~/.bashrc       && \
+        /home/dev/.bashrc                                               && \
+    echo 'PS1=`echo $PS1|sed "s/\\\\\\w/\\\\\\W/g"`' >> /home/dev/.bashrc && \
     ln -s /usr/include/lua5.2/ /usr/include/lua                         && \
     ln -s /usr/lib/x86_64-linux-gnu/liblua5.2.so /usr/lib/liblua.so     && \
     gem install compass --pre                                           && \

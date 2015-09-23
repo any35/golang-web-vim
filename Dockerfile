@@ -25,6 +25,7 @@ RUN adduser dev --disabled-password --gecos ""                          && \
     echo 'TERM="xterm-256color"' >> ~/.bashrc                           && \
     sed -i 's/#force_color_prompt=yes/force_color_prompt=yes/g'            \
         ~/.bashrc                                                       && \
+    echo 'PS1=`echo $PS1|sed "s/\\\\\\w/\\\\\\W/g"`' >> ~/.bashrc       && \
     ln -s /usr/include/lua5.2/ /usr/include/lua                         && \
     ln -s /usr/lib/x86_64-linux-gnu/liblua5.2.so /usr/lib/liblua.so     && \
     gem install compass --pre                                           && \

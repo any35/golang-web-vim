@@ -20,8 +20,11 @@ RUN adduser dev --disabled-password --gecos ""                          && \
     apt-get install -y nodejs                                           && \
     echo 'PATH=/usr/local/go/bin/:$PATH' >> /etc/environment            && \
     echo 'TERM="xterm-256color"' >> /etc/environment                    && \
-    echo 'PATH=/usr/local/go/bin/:$PATH' >> /root/.profile              && \
-    echo 'TERM="xterm-256color"' >> /root/.profile                      && \
+    echo 'PATH=/usr/local/go/bin/:$PATH' >> /root/.bashrc               && \
+    echo 'TERM="xterm-256color"' >> /root/.bashrc                       && \
+    echo 'TERM="xterm-256color"' >> ~/.bashrc                           && \
+    sed -i 's/#force_color_prompt=yes/force_color_prompt=yes/g'            \
+        ~/.bashrc                                                       && \
     ln -s /usr/include/lua5.2/ /usr/include/lua                         && \
     ln -s /usr/lib/x86_64-linux-gnu/liblua5.2.so /usr/lib/liblua.so     && \
     gem install compass --pre                                           && \
@@ -62,6 +65,8 @@ RUN cd /tmp                                                                    &
     sudo make install && cd /tmp && rm -rf vim/                                && \
 # cleanup
     sudo rm -rf /go/src/* /go/pkg                                              && \
+# cleanup
+    sudo rm -rf /go/src/* /go/pkg                                              && \
     sudo apt-get remove -y ncurses-dev                                         && \
     sudo apt-get autoremove -y                                                 && \
     sudo apt-get clean && rm -rf /tmp/* /var/tmp/*                             && \
@@ -95,8 +100,6 @@ RUN cd /tmp                                                                    &
     git clone --depth 1 https://github.com/pangloss/vim-javascript.git && rm -rf vim-javascript/.git                && \
     git clone --depth 1 https://github.com/plasticboy/vim-markdown.git && rm -rf vim-markdown/.git                  && \
     git clone --depth 1 https://github.com/scrooloose/nerdcommenter.git && rm -rf nerdcommenter/.git                && \
-    git clone --depth 1 https://github.com/scrooloose/nerdtree.git && rm -rf nerdtree/.git                          && \
-    git clone --depth 1 https://github.com/scrooloose/syntastic.git && rm -rf syntastic/.git                        && \
     git clone --depth 1 https://github.com/terryma/vim-expand-region.git && rm -rf vim-expand-region/.git           && \
     git clone --depth 1 https://github.com/terryma/vim-multiple-cursors.git && rm -rf vim-multiple-cursors/.git     && \
     git clone --depth 1 https://github.com/tomtom/tlib_vim.git && rm -rf tlib_vim/.git                              && \

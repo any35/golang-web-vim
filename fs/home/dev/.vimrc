@@ -126,6 +126,8 @@ nmap <F7> :NERDTreeTabsToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 nmap <C-Left> :tabprevious<CR>
 nmap <C-Right> :tabnext<CR>
+nmap <F9> :tabprevious<CR>
+nmap <F10> :tabnext<CR>
 
 " show a list of interfaces which is implemented by the type under your cursor
 au FileType go nmap <Leader>s <Plug>(go-implements)

@@ -10,7 +10,7 @@ RUN adduser dev --disabled-password --gecos ""                          && \
     apt-get update                                                      && \
     apt-get install -y ncurses-dev libtolua-dev exuberant-ctags sudo       \
         apt-utils screen                                                && \
-    apt-get install -y curl build-essential openssl libssl-dev tmux        \
+    apt-get install -y curl build-essential openssl libssl-dev             \
         autotools-dev automake                                             \
         libevent-dev cmake ruby-full build-essential                    && \
     echo "ALL            ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers     && \
@@ -40,7 +40,12 @@ RUN adduser dev --disabled-password --gecos ""                          && \
     go get github.com/kisielk/errcheck                                  && \
     go get github.com/jstemmer/gotags                                   && \
     sudo mkdir -p /usr/local/go/bin/                                    && \
-    sudo mv /go/bin/* /usr/local/go/bin/ 
+    sudo mv /go/bin/* /usr/local/go/bin/                                && \
+# install tmux
+    cd /tmp                                                             && \
+    wget https://github.com/tmux/tmux/releases/download/2.0/tmux-2.0.tar.gz && \
+    tar zxf tmux-2.0.tar.gz && cd tmux-2.0/ && ./configure              && \
+    make && make install && cd /tmp && rm -rf tmux*
 
 ADD fs/ /
 USER dev

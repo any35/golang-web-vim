@@ -43,8 +43,8 @@ RUN adduser dev --disabled-password --gecos ""                          && \
     sudo mv /go/bin/* /usr/local/go/bin/                                && \
 # install tmux
     cd /tmp                                                             && \
-    wget https://github.com/tmux/tmux/releases/download/2.0/tmux-2.0.tar.gz && \
-    tar zxf tmux-2.0.tar.gz && cd tmux-2.0/ && ./configure              && \
+    wget https://github.com/tmux/tmux/releases/download/2.1/tmux-2.1.tar.gz && \
+    tar zxf tmux-2.1.tar.gz && cd tmux-2.1/ && ./configure              && \
     make && make install && cd /tmp && rm -rf tmux*
 
 ADD fs/ /

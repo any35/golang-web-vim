@@ -9,10 +9,9 @@ MAINTAINER any35 hupeng.net@hotmail.com
 RUN adduser dev --disabled-password --gecos ""                          && \
     apt-get update                                                      && \
     apt-get install -y ncurses-dev libtolua-dev exuberant-ctags sudo       \
-        apt-utils screen                                                && \
-    apt-get install -y curl build-essential openssl libssl-dev             \
-        autotools-dev automake                                             \
-        libevent-dev cmake ruby-full build-essential                    && \
+        apt-utils screen curl build-essential openssl libssl-dev           \
+        autotools-dev automake libevent-dev cmake ruby-full                \
+        build-essential                                                 && \
     echo "ALL            ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers     && \
     mkdir -p /home/dev /go                                              && \
     chown -R dev:dev /home/dev /go                                      && \
@@ -58,6 +57,12 @@ EXPOSE 35729
 # install pagkages
 RUN cd /tmp                                                                    && \
 # build and install tmate
+git clone https://github.com/msgpack/msgpack-c && \
+cd msgpack-c && ./bootstrap && ./configure && make && sudo make install && cd /tmp && \
+wget https://red.libssh.org/attachments/download/177/libssh-0.7.2.tar.xz && \
+tar xf libssh-0.7.2.tar.xz && cd libssh-0.7.2 && mkdir build && cd build && \
+cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release .. && make && \
+sudo make install && cd /tmp && \
     git clone --depth 1 https://github.com/nviennot/tmate                      && \
     cd tmate && ./autogen.sh && ./configure                                    && \
     make && sudo make install && cd ../ && sudo rm -rf tmate/                  && \
@@ -123,8 +128,8 @@ RUN cd /tmp                                                                    &
     sudo ln /home/dev/tmux-panes /root/tmux-panes                              && \
     sudo ln -s /home/dev/.vim /root/.vim
 # enable yeoman
-RUN cd /tmp && wget https://nodejs.org/dist/v4.1.1/node-v4.1.1-linux-x64.tar.gz && \
-    sudo tar -C /usr/ --strip-components 1 -xzf node-v4.1.1-linux-x64.tar.gz   && \
+RUN cd /tmp && wget https://nodejs.org/dist/v0.12.9/node-v0.12.9-linux-x64.tar.gz && \
+    sudo tar -C /usr/ --strip-components 1 -xzf node-v0.12.9-linux-x64.tar.gz   && \
     sudo ln /usr/bin/node /usr/bin/nodejs && rm -rf /tmp/node-v4*              && \
     sudo chmod 777 /usr/bin/node /usr/bin/npm /usr/bin/nodejs                  && \
     sudo npm install -g grunt grunt-cli bower                                  && \

@@ -95,6 +95,7 @@ RUN cd /tmp                                                                    &
     git clone --depth 1 https://github.com/jlanzarotta/bufexplorer.git && rm -rf bufexplorer/.git                   && \
     git clone --depth 1 https://github.com/kien/ctrlp.vim.git && rm -rf ctrlp.vim/.git                              && \
     git clone --depth 1 https://github.com/majutsushi/tagbar.git && rm -rf tagbar/.git                              && \
+    git clone --depth 1 https://github.com/mattn/emmet-vim.git && rm -rf emmet-vim/.git                             && \
     git clone --depth 1 https://github.com/marcweber/vim-addon-mw-utils.git && rm -rf vim-addon-mw-utils/.git       && \
     git clone --depth 1 https://github.com/mbbill/undotree.git && rm -rf undotree/.git                              && \
     git clone --depth 1 https://github.com/michaeljsmith/vim-indent-object.git && rm -rf vim-indent-object/.git     && \
@@ -127,12 +128,14 @@ RUN cd /tmp && wget https://nodejs.org/dist/v4.1.1/node-v4.1.1-linux-x64.tar.gz 
     sudo ln /usr/bin/node /usr/bin/nodejs && rm -rf /tmp/node-v4*              && \
     sudo chmod 777 /usr/bin/node /usr/bin/npm /usr/bin/nodejs                  && \
     sudo npm install -g grunt grunt-cli bower                                  && \
-    sudo npm install -g yo gulp generator-karma                                && \
+    sudo npm install -g yo gulp generator-karma plugman                        && \
     sudo npm install -g generator-angular generator-webapp                     && \
+    sudo gem install sass                                                      && \
     sudo gem sources --remove https://rubygems.org/                            && \
     sudo gem sources --remove http://rubygems.org/                             && \
     sudo gem sources -a https://ruby.taobao.org/                               && \
     sudo gem sources -l                                                        && \
     sudo npm config set registry https://registry.npm.taobao.org               && \
     sudo npm config set cache /go/cache/npm --global                           && \
-    echo 'registry = https://registry.npm.taobao.org' >/home/dev/.npmrc 
+    echo 'registry = https://registry.npm.taobao.org' >/home/dev/.npmrc
+    

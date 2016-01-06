@@ -30,6 +30,7 @@ for more information pls visit [use 256 colors in screen](https://wiki.archlinux
 * [bufexplorer](https://github.com/jlanzarotta/bufexplorer) BufExplorer Plugin for Vim
 * [ctrlp](https://github.com/kien/ctrlp.vim) Fuzzy file, buffer, mru, tag, etc finder.
 * [tagbar](https://github.com/majutsushi/tagbar) Vim plugin that displays tags in a window, ordered by scope http://majutsushi.github.com/tagbar/
+* [emmet-vim](https://github.com/mattn/emmet-vim) emmet for vim
 * [addon-mw-utils](https://github.com/marcweber/vim-addon-mw-utils) interpret a file by function and cache file automatically(required by snipmate)
 * [undotree](https://github.com/mbbill/undotree) The ultimate undo history visualizer for VIM
 * [indent-object](https://github.com/michaeljsmith/vim-indent-object) This plugin defines a new text object, based on indentation levels.
